@@ -9,7 +9,7 @@ namespace EmployeesManager
     public static class LoginCredentials
     {
         private static string correctUsername = "asd";
-        private static string correctPassword = "1234";
+        private static string correctPassword = "asd";
 
         public static bool CheckLogin(string username, string password)
         {

@@ -17,6 +17,13 @@ namespace EmployeesManager
                 {
                     MessageBox.Show("Zadane udaje nejsou spravne");
                 }
+                else
+                {
+                    this.Visible = false;
+
+                    EmployeeList employeeList = new EmployeeList();
+                    employeeList.ShowDialog();
+                }
             }
         }
 
