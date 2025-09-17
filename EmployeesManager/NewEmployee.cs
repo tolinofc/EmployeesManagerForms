@@ -26,25 +26,36 @@ namespace EmployeesManager
 
             this.textBox_EmployeeName.Text = employee.Name;
             this.textBox_EmployeeSurname.Text = employee.Surname;
-            this.textBox_Position.Text = employee.PositionId.ToString();
-            this.textBox_Project.Text = employee.ProjectId.ToString();
 
             if (employee.DepartmentId > 0)
             {
                 this.comboBox_Department.SelectedValue = employee.DepartmentId;
             }
+
+            if (employee.PositionId > 0)
+            {
+                this.comboBox_Position.SelectedValue = employee.PositionId;
+            }
+
+            if (employee.PositionId > 0)
+            {
+                this.comboBox_Project.SelectedValue = employee.ProjectId;
+            }
         }
 
         private void button_OK_Click(object sender, EventArgs e)
         {
-            this.employee.Name = textBox_EmployeeName.Text;
-            this.employee.Surname = textBox_EmployeeSurname.Text;
-            this.employee.DepartmentId = (int)this.comboBox_Department.SelectedValue;
-            this.employee.ProjectId = Int32.Parse(textBox_Project.Text);
-            this.employee.PositionId = Int32.Parse(textBox_Position.Text);
+            if (ValidateChildren())
+            {
+                this.employee.Name = textBox_EmployeeName.Text;
+                this.employee.Surname = textBox_EmployeeSurname.Text;
+                this.employee.DepartmentId = (int)this.comboBox_Department.SelectedValue;
+                this.employee.ProjectId = (int)this.comboBox_Project.SelectedValue;
+                this.employee.PositionId = (int)this.comboBox_Position.SelectedValue;
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void button_Cancel_Click(object sender, EventArgs e)
@@ -83,6 +94,77 @@ namespace EmployeesManager
             this.comboBox_Department.DataSource = departmentList;
             this.comboBox_Department.DisplayMember = "Name";
             this.comboBox_Department.ValueMember = "Id";
+
+            List<Position> positionList = context.Positions.ToList();
+            this.comboBox_Position.DataSource = positionList;
+            this.comboBox_Position.DisplayMember = "Name";
+            this.comboBox_Position.ValueMember = "Id";
+
+
+            List<Project> projectList = context.Projects.ToList();
+            this.comboBox_Project.DataSource = projectList;
+            this.comboBox_Project.DisplayMember = "Name";
+            this.comboBox_Project.ValueMember = "Id";
+        }
+
+        private void button_AddNewPosition_Click(object sender, EventArgs e)
+        {
+            BindingList<Position> listPosition = new BindingList<Position>();
+
+            NewPosition formPosition = new NewPosition();
+
+            formPosition.Show();
+
+            formPosition.FormClosed += (sender, e) =>
+            {
+                using (MyContext context = new MyContext())
+                {
+                    if (formPosition.DialogResult == DialogResult.OK)
+                    {
+                        context.Positions.Add(formPosition.position);
+                        listPosition.Add(formPosition.position);
+                        context.SaveChanges();
+                    }
+                }
+            };
+        }
+
+        private void button_AddNewProject_Click(object sender, EventArgs e)
+        {
+            BindingList<Project> listProject = new BindingList<Project>();
+
+            NewProject formProject = new NewProject();
+
+            formProject.Show();
+
+            formProject.FormClosed += (sender, e) =>
+            {
+                using (MyContext context = new MyContext())
+                {
+                    if (formProject.DialogResult == DialogResult.OK)
+                    {
+                        context.Projects.Add(formProject.project);
+                        listProject.Add(formProject.project);
+                        context.SaveChanges();
+                    }
+                }
+            };
+        }
+
+        private void ValidateTextbox(object sender, CancelEventArgs e)
+        {
+            if (e.Cancel) return;
+            TextBox textBox = sender as TextBox;
+
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                e.Cancel = true;
+                this.NewEmployeeValidate.SetError(textBox, "Pole je povinne");
+            }
+            else
+            {
+                this.NewEmployeeValidate.SetError(textBox, null);
+            }
         }
     }
 }

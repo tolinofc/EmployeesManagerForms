@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             textBox_EmployeeName = new TextBox();
             textBox_EmployeeSurname = new TextBox();
             label1 = new Label();
@@ -35,15 +36,17 @@
             label3 = new Label();
             button_OK = new Button();
             button_Cancel = new Button();
-            textBox_Position = new TextBox();
             label4 = new Label();
             label5 = new Label();
-            textBox_Project = new TextBox();
             label6 = new Label();
             button_AddNewPosition = new Button();
             button_AddNewDepartment = new Button();
             button_AddNewProject = new Button();
             comboBox_Department = new ComboBox();
+            comboBox_Position = new ComboBox();
+            comboBox_Project = new ComboBox();
+            NewEmployeeValidate = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)NewEmployeeValidate).BeginInit();
             SuspendLayout();
             // 
             // textBox_EmployeeName
@@ -52,6 +55,7 @@
             textBox_EmployeeName.Name = "textBox_EmployeeName";
             textBox_EmployeeName.Size = new Size(145, 23);
             textBox_EmployeeName.TabIndex = 0;
+            textBox_EmployeeName.Validating += ValidateTextbox;
             // 
             // textBox_EmployeeSurname
             // 
@@ -59,6 +63,7 @@
             textBox_EmployeeSurname.Name = "textBox_EmployeeSurname";
             textBox_EmployeeSurname.Size = new Size(145, 23);
             textBox_EmployeeSurname.TabIndex = 1;
+            textBox_EmployeeSurname.Validating += ValidateTextbox;
             // 
             // label1
             // 
@@ -111,13 +116,6 @@
             button_Cancel.UseVisualStyleBackColor = true;
             button_Cancel.Click += button_Cancel_Click;
             // 
-            // textBox_Position
-            // 
-            textBox_Position.Location = new Point(64, 112);
-            textBox_Position.Name = "textBox_Position";
-            textBox_Position.Size = new Size(145, 23);
-            textBox_Position.TabIndex = 2;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -138,13 +136,6 @@
             label5.Text = "Oddeleni";
             label5.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // textBox_Project
-            // 
-            textBox_Project.Location = new Point(64, 170);
-            textBox_Project.Name = "textBox_Project";
-            textBox_Project.Size = new Size(145, 23);
-            textBox_Project.TabIndex = 4;
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -163,6 +154,7 @@
             button_AddNewPosition.TabIndex = 7;
             button_AddNewPosition.Text = "Přidat";
             button_AddNewPosition.UseVisualStyleBackColor = true;
+            button_AddNewPosition.Click += button_AddNewPosition_Click;
             // 
             // button_AddNewDepartment
             // 
@@ -182,20 +174,45 @@
             button_AddNewProject.TabIndex = 7;
             button_AddNewProject.Text = "Přidat";
             button_AddNewProject.UseVisualStyleBackColor = true;
+            button_AddNewProject.Click += button_AddNewProject_Click;
             // 
             // comboBox_Department
             // 
             comboBox_Department.FormattingEnabled = true;
-            comboBox_Department.Location = new Point(67, 141);
+            comboBox_Department.Location = new Point(64, 141);
             comboBox_Department.Name = "comboBox_Department";
-            comboBox_Department.Size = new Size(142, 23);
+            comboBox_Department.Size = new Size(144, 23);
             comboBox_Department.TabIndex = 8;
+            // 
+            // comboBox_Position
+            // 
+            comboBox_Position.FormattingEnabled = true;
+            comboBox_Position.Location = new Point(65, 112);
+            comboBox_Position.Name = "comboBox_Position";
+            comboBox_Position.Size = new Size(144, 23);
+            comboBox_Position.TabIndex = 8;
+            // 
+            // comboBox_Project
+            // 
+            comboBox_Project.FormattingEnabled = true;
+            comboBox_Project.Location = new Point(65, 170);
+            comboBox_Project.Name = "comboBox_Project";
+            comboBox_Project.Size = new Size(144, 23);
+            comboBox_Project.TabIndex = 8;
+            // 
+            // NewEmployeeValidate
+            // 
+            NewEmployeeValidate.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+            NewEmployeeValidate.ContainerControl = this;
             // 
             // NewEmployee
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoValidate = AutoValidate.EnableAllowFocusChange;
             ClientSize = new Size(277, 235);
+            Controls.Add(comboBox_Position);
+            Controls.Add(comboBox_Project);
             Controls.Add(comboBox_Department);
             Controls.Add(button_AddNewProject);
             Controls.Add(button_AddNewDepartment);
@@ -208,12 +225,11 @@
             Controls.Add(label2);
             Controls.Add(label4);
             Controls.Add(label1);
-            Controls.Add(textBox_Project);
             Controls.Add(textBox_EmployeeSurname);
-            Controls.Add(textBox_Position);
             Controls.Add(textBox_EmployeeName);
             Name = "NewEmployee";
             Text = "NewEmployeeForm";
+            ((System.ComponentModel.ISupportInitialize)NewEmployeeValidate).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -227,14 +243,15 @@
         private Label label3;
         private Button button_OK;
         private Button button_Cancel;
-        private TextBox textBox_Position;
         private Label label4;
         private Label label5;
-        private TextBox textBox_Project;
         private Label label6;
         private Button button_AddNewPosition;
         private Button button_AddNewDepartment;
         private Button button_AddNewProject;
         private ComboBox comboBox_Department;
+        private ComboBox comboBox_Position;
+        private ComboBox comboBox_Project;
+        private ErrorProvider NewEmployeeValidate;
     }
 }
