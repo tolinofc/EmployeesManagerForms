@@ -35,6 +35,12 @@
             label3 = new Label();
             button_OK = new Button();
             button_Cancel = new Button();
+            textBox_Position = new TextBox();
+            textBox_Department = new TextBox();
+            label4 = new Label();
+            label5 = new Label();
+            textBox_Project = new TextBox();
+            label6 = new Label();
             SuspendLayout();
             // 
             // textBox_EmployeeName
@@ -49,7 +55,7 @@
             textBox_EmployeeSurname.Location = new Point(65, 83);
             textBox_EmployeeSurname.Name = "textBox_EmployeeSurname";
             textBox_EmployeeSurname.Size = new Size(145, 23);
-            textBox_EmployeeSurname.TabIndex = 0;
+            textBox_EmployeeSurname.TabIndex = 1;
             // 
             // label1
             // 
@@ -84,33 +90,92 @@
             // 
             // button_OK
             // 
-            button_OK.Location = new Point(54, 121);
+            button_OK.Location = new Point(64, 199);
             button_OK.Name = "button_OK";
             button_OK.Size = new Size(75, 23);
-            button_OK.TabIndex = 3;
+            button_OK.TabIndex = 5;
             button_OK.Text = "Přidat";
             button_OK.UseVisualStyleBackColor = true;
+            button_OK.Click += button_OK_Click;
             // 
             // button_Cancel
             // 
-            button_Cancel.Location = new Point(135, 121);
+            button_Cancel.Location = new Point(145, 199);
             button_Cancel.Name = "button_Cancel";
             button_Cancel.Size = new Size(75, 23);
-            button_Cancel.TabIndex = 4;
+            button_Cancel.TabIndex = 6;
             button_Cancel.Text = "Zrušit";
             button_Cancel.UseVisualStyleBackColor = true;
+            button_Cancel.Click += button_Cancel_Click;
+            // 
+            // textBox_Position
+            // 
+            textBox_Position.Location = new Point(64, 112);
+            textBox_Position.Name = "textBox_Position";
+            textBox_Position.Size = new Size(145, 23);
+            textBox_Position.TabIndex = 2;
+            // 
+            // textBox_Department
+            // 
+            textBox_Department.Location = new Point(64, 141);
+            textBox_Department.Name = "textBox_Department";
+            textBox_Department.Size = new Size(145, 23);
+            textBox_Department.TabIndex = 3;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(15, 115);
+            label4.Name = "label4";
+            label4.Size = new Size(41, 15);
+            label4.TabIndex = 1;
+            label4.Text = "Pozice";
+            label4.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(6, 144);
+            label5.Name = "label5";
+            label5.Size = new Size(55, 15);
+            label5.TabIndex = 1;
+            label5.Text = "Oddeleni";
+            label5.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // textBox_Project
+            // 
+            textBox_Project.Location = new Point(64, 170);
+            textBox_Project.Name = "textBox_Project";
+            textBox_Project.Size = new Size(145, 23);
+            textBox_Project.TabIndex = 4;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(6, 173);
+            label6.Name = "label6";
+            label6.Size = new Size(44, 15);
+            label6.TabIndex = 1;
+            label6.Text = "Projekt";
+            label6.TextAlign = ContentAlignment.MiddleRight;
             // 
             // NewEmployee
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(232, 168);
+            ClientSize = new Size(232, 235);
             Controls.Add(button_Cancel);
             Controls.Add(button_OK);
             Controls.Add(label3);
+            Controls.Add(label6);
+            Controls.Add(label5);
             Controls.Add(label2);
+            Controls.Add(label4);
             Controls.Add(label1);
+            Controls.Add(textBox_Project);
+            Controls.Add(textBox_Department);
             Controls.Add(textBox_EmployeeSurname);
+            Controls.Add(textBox_Position);
             Controls.Add(textBox_EmployeeName);
             Name = "NewEmployee";
             Text = "NewEmployeeForm";
@@ -127,5 +192,11 @@
         private Label label3;
         private Button button_OK;
         private Button button_Cancel;
+        private TextBox textBox_Position;
+        private TextBox textBox_Department;
+        private Label label4;
+        private Label label5;
+        private TextBox textBox_Project;
+        private Label label6;
     }
 }

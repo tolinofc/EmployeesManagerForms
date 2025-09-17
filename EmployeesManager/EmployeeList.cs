@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmployeesManager.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,31 +13,32 @@ namespace EmployeesManager
 {
     public partial class EmployeeList : Form
     {
-        MyContext context;
+        private MyContext context;
+        private BindingList<Employee> list = new BindingList<Employee>();
 
         public EmployeeList()
         {
             this.context = new MyContext();
             InitializeComponent();
-        }
 
-        private void EmployeeList_Load(object sender, EventArgs e)
-        {
-            var employees = context.Employees.ToList();
+            var employeesFromDb = context.Employees.ToList();
+            this.list = new BindingList<Employee>(employeesFromDb);
 
-            this.dataGridView_Employees.DataSource = employees;
+            this.dataGridView_Employees.DataSource = list;
         }
 
         private void button_AddNew_Click(object sender, EventArgs e)
         {
-            NewEmployee newEmployee = new NewEmployee();
+            NewEmployee formEmployee = new NewEmployee();
 
-            newEmployee.Show();
-            newEmployee.FormClosed += (sender, e) =>
+            formEmployee.Show();
+            formEmployee.FormClosed += (sender, e) =>
             {
-                if (newEmployee.DialogResult == DialogResult.OK)
+                if (formEmployee.DialogResult == DialogResult.OK)
                 {
-                    //context.Employees.Add(newEmployee);
+                    context.Employees.Add(formEmployee.employee);
+                    this.list.Add(formEmployee.employee);
+                    this.context.SaveChanges();
                 }
             };
         }

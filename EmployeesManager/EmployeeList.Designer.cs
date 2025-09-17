@@ -63,7 +63,6 @@
             Controls.Add(dataGridView_Employees);
             Name = "EmployeeList";
             Text = "EmployeeList";
-            Load += EmployeeList_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView_Employees).EndInit();
             ResumeLayout(false);
         }
