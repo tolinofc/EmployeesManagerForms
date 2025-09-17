@@ -29,12 +29,15 @@ namespace EmployeesManager
 
         private void button_AddNew_Click(object sender, EventArgs e)
         {
-            NewObject newObject = new NewObject(list);
-            newObject.ShowDialog();
+            NewEmployee formEmployee = new NewEmployee();
 
-            if (DialogResult == DialogResult.OK)
+            formEmployee.ShowDialog();
+
+            if (formEmployee.DialogResult == DialogResult.OK)
             {
-                this.list = newObject.list;
+                context.Employees.Add(formEmployee.employee);
+                this.list.Add(formEmployee.employee);
+                this.context.SaveChanges();
             }
         }
     }

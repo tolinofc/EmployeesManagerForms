@@ -36,11 +36,14 @@
             button_OK = new Button();
             button_Cancel = new Button();
             textBox_Position = new TextBox();
-            textBox_Department = new TextBox();
             label4 = new Label();
             label5 = new Label();
             textBox_Project = new TextBox();
             label6 = new Label();
+            button_AddNewPosition = new Button();
+            button_AddNewDepartment = new Button();
+            button_AddNewProject = new Button();
+            comboBox_Department = new ComboBox();
             SuspendLayout();
             // 
             // textBox_EmployeeName
@@ -115,13 +118,6 @@
             textBox_Position.Size = new Size(145, 23);
             textBox_Position.TabIndex = 2;
             // 
-            // textBox_Department
-            // 
-            textBox_Department.Location = new Point(64, 141);
-            textBox_Department.Name = "textBox_Department";
-            textBox_Department.Size = new Size(145, 23);
-            textBox_Department.TabIndex = 3;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -159,11 +155,51 @@
             label6.Text = "Projekt";
             label6.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // button_AddNewPosition
+            // 
+            button_AddNewPosition.Location = new Point(215, 111);
+            button_AddNewPosition.Name = "button_AddNewPosition";
+            button_AddNewPosition.Size = new Size(52, 23);
+            button_AddNewPosition.TabIndex = 7;
+            button_AddNewPosition.Text = "Přidat";
+            button_AddNewPosition.UseVisualStyleBackColor = true;
+            // 
+            // button_AddNewDepartment
+            // 
+            button_AddNewDepartment.Location = new Point(215, 140);
+            button_AddNewDepartment.Name = "button_AddNewDepartment";
+            button_AddNewDepartment.Size = new Size(52, 23);
+            button_AddNewDepartment.TabIndex = 7;
+            button_AddNewDepartment.Text = "Přidat";
+            button_AddNewDepartment.UseVisualStyleBackColor = true;
+            button_AddNewDepartment.Click += button_AddNewDepartment_Click;
+            // 
+            // button_AddNewProject
+            // 
+            button_AddNewProject.Location = new Point(215, 170);
+            button_AddNewProject.Name = "button_AddNewProject";
+            button_AddNewProject.Size = new Size(52, 23);
+            button_AddNewProject.TabIndex = 7;
+            button_AddNewProject.Text = "Přidat";
+            button_AddNewProject.UseVisualStyleBackColor = true;
+            // 
+            // comboBox_Department
+            // 
+            comboBox_Department.FormattingEnabled = true;
+            comboBox_Department.Location = new Point(67, 141);
+            comboBox_Department.Name = "comboBox_Department";
+            comboBox_Department.Size = new Size(142, 23);
+            comboBox_Department.TabIndex = 8;
+            // 
             // NewEmployee
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(232, 235);
+            ClientSize = new Size(277, 235);
+            Controls.Add(comboBox_Department);
+            Controls.Add(button_AddNewProject);
+            Controls.Add(button_AddNewDepartment);
+            Controls.Add(button_AddNewPosition);
             Controls.Add(button_Cancel);
             Controls.Add(button_OK);
             Controls.Add(label3);
@@ -173,7 +209,6 @@
             Controls.Add(label4);
             Controls.Add(label1);
             Controls.Add(textBox_Project);
-            Controls.Add(textBox_Department);
             Controls.Add(textBox_EmployeeSurname);
             Controls.Add(textBox_Position);
             Controls.Add(textBox_EmployeeName);
@@ -193,10 +228,13 @@
         private Button button_OK;
         private Button button_Cancel;
         private TextBox textBox_Position;
-        private TextBox textBox_Department;
         private Label label4;
         private Label label5;
         private TextBox textBox_Project;
         private Label label6;
+        private Button button_AddNewPosition;
+        private Button button_AddNewDepartment;
+        private Button button_AddNewProject;
+        private ComboBox comboBox_Department;
     }
 }
