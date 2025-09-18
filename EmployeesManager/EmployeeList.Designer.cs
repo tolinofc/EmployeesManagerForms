@@ -30,6 +30,11 @@
         {
             dataGridView_Employees = new DataGridView();
             button_AddNew = new Button();
+            Name = new DataGridViewTextBoxColumn();
+            Surname = new DataGridViewTextBoxColumn();
+            Department = new DataGridViewTextBoxColumn();
+            Position = new DataGridViewTextBoxColumn();
+            Project = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView_Employees).BeginInit();
             SuspendLayout();
             // 
@@ -38,6 +43,7 @@
             dataGridView_Employees.AllowUserToAddRows = false;
             dataGridView_Employees.AllowUserToDeleteRows = false;
             dataGridView_Employees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_Employees.Columns.AddRange(new DataGridViewColumn[] { Name, Surname, Department, Position, Project });
             dataGridView_Employees.Location = new Point(12, 12);
             dataGridView_Employees.Name = "dataGridView_Employees";
             dataGridView_Employees.ReadOnly = true;
@@ -54,6 +60,41 @@
             button_AddNew.UseVisualStyleBackColor = true;
             button_AddNew.Click += button_AddNew_Click;
             // 
+            // Name
+            // 
+            Name.DataPropertyName = "Name";
+            Name.HeaderText = "Jméno";
+            Name.Name = "Name";
+            Name.ReadOnly = true;
+            // 
+            // Surname
+            // 
+            Surname.DataPropertyName = "Surname";
+            Surname.HeaderText = "Příjmení";
+            Surname.Name = "Surname";
+            Surname.ReadOnly = true;
+            // 
+            // Department
+            // 
+            Department.DataPropertyName = "Department";
+            Department.HeaderText = "Oddělení";
+            Department.Name = "Department";
+            Department.ReadOnly = true;
+            // 
+            // Position
+            // 
+            Position.DataPropertyName = "Position";
+            Position.HeaderText = "Pozice";
+            Position.Name = "Position";
+            Position.ReadOnly = true;
+            // 
+            // Project
+            // 
+            Project.DataPropertyName = "Project";
+            Project.HeaderText = "Projekt";
+            Project.Name = "Project";
+            Project.ReadOnly = true;
+            // 
             // EmployeeList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -61,7 +102,6 @@
             ClientSize = new Size(800, 450);
             Controls.Add(button_AddNew);
             Controls.Add(dataGridView_Employees);
-            Name = "EmployeeList";
             Text = "EmployeeList";
             ((System.ComponentModel.ISupportInitialize)dataGridView_Employees).EndInit();
             ResumeLayout(false);
@@ -71,5 +111,10 @@
 
         private DataGridView dataGridView_Employees;
         private Button button_AddNew;
+        private DataGridViewTextBoxColumn Name;
+        private DataGridViewTextBoxColumn Surname;
+        private DataGridViewTextBoxColumn Department;
+        private DataGridViewTextBoxColumn Position;
+        private DataGridViewTextBoxColumn Project;
     }
 }

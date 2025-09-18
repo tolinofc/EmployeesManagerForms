@@ -20,9 +20,9 @@ namespace EmployeesManager
         {
             this.context = new MyContext();
             InitializeComponent();
+            this.dataGridView_Employees.AutoGenerateColumns = false;
 
-            var employeesFromDb = context.Employees.ToList();
-            this.list = new BindingList<Employee>(employeesFromDb);
+            reloadData();
 
             this.dataGridView_Employees.DataSource = list;
         }
@@ -38,7 +38,15 @@ namespace EmployeesManager
                 context.Employees.Add(formEmployee.employee);
                 this.list.Add(formEmployee.employee);
                 this.context.SaveChanges();
+
+                reloadData();
             }
+        }
+
+        private void reloadData()
+        {
+            var employeesFromDb = context.Employees.ToList();
+            this.list = new BindingList<Employee>(employeesFromDb);
         }
     }
 }

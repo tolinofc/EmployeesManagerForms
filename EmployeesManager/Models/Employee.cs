@@ -14,5 +14,8 @@ namespace EmployeesManager.Models
         public int DepartmentId {  get; set; }
         public int PositionId { get; set; }
         public int ProjectId { get; set; }
+        public virtual Department Department { get; set; }
+        public virtual Position Position { get; set; }
+        public virtual Project Project { get; set; }
     }
 }

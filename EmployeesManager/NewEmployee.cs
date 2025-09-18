@@ -1,4 +1,5 @@
 ﻿using EmployeesManager.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,7 @@ namespace EmployeesManager
         public NewEmployee()
         {
             InitializeComponent();
-            LoadCombobox();
+            LoadAllComboboxes();
         }
 
         public NewEmployee(Employee employee) : this()
@@ -81,30 +82,11 @@ namespace EmployeesManager
                         context.Departments.Add(formDepartment.department);
                         listDepartment.Add(formDepartment.department);
                         context.SaveChanges();
+
+                        LoadCombobox<Department>(this.comboBox_Department);
                     }
                 }
             };
-        }
-
-        private void LoadCombobox()
-        {
-            MyContext context = new MyContext();
-
-            List<Department> departmentList = context.Departments.ToList();
-            this.comboBox_Department.DataSource = departmentList;
-            this.comboBox_Department.DisplayMember = "Name";
-            this.comboBox_Department.ValueMember = "Id";
-
-            List<Position> positionList = context.Positions.ToList();
-            this.comboBox_Position.DataSource = positionList;
-            this.comboBox_Position.DisplayMember = "Name";
-            this.comboBox_Position.ValueMember = "Id";
-
-
-            List<Project> projectList = context.Projects.ToList();
-            this.comboBox_Project.DataSource = projectList;
-            this.comboBox_Project.DisplayMember = "Name";
-            this.comboBox_Project.ValueMember = "Id";
         }
 
         private void button_AddNewPosition_Click(object sender, EventArgs e)
@@ -124,6 +106,8 @@ namespace EmployeesManager
                         context.Positions.Add(formPosition.position);
                         listPosition.Add(formPosition.position);
                         context.SaveChanges();
+
+                        LoadCombobox<Position>(this.comboBox_Position);
                     }
                 }
             };
@@ -146,6 +130,8 @@ namespace EmployeesManager
                         context.Projects.Add(formProject.project);
                         listProject.Add(formProject.project);
                         context.SaveChanges();
+
+                        LoadCombobox<Project>(this.comboBox_Project);
                     }
                 }
             };
@@ -164,6 +150,35 @@ namespace EmployeesManager
             else
             {
                 this.NewEmployeeValidate.SetError(textBox, null);
+            }
+        }
+
+        private void LoadAllComboboxes()
+        {
+            LoadCombobox<Department>(this.comboBox_Department);
+            LoadCombobox<Position>(this.comboBox_Position);
+            LoadCombobox<Project>(this.comboBox_Project);
+        }
+
+        private void LoadCombobox<TEntity>(ComboBox comboBox) where TEntity : class, IEntity
+        {
+            using (var context = new MyContext())
+            {
+                var selectedId = comboBox.SelectedValue;
+
+                comboBox.DataSource = context.Set<TEntity>().ToList();
+
+                comboBox.DisplayMember = "Name";
+                comboBox.ValueMember = "Id";
+
+                if (selectedId != null)
+                {
+                    try
+                    {
+                        comboBox.SelectedValue = selectedId;
+                    }
+                    catch (ArgumentOutOfRangeException) { }
+                }
             }
         }
     }

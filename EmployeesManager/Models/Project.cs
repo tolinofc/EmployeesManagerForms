@@ -7,10 +7,15 @@ using System.Threading.Tasks;
 
 namespace EmployeesManager.Models
 {
-    public class Project : DbContext
+    public class Project : IEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string? Description { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

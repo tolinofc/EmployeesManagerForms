@@ -19,5 +19,20 @@ namespace EmployeesManager
         {
             optionsBuilder.UseMySQL("server=mysqlstudenti.litv.sssvt.cz;database=4b2_jandatomas_db1;user=jandatomas;password=123456;SslMode=none");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Employee>()
+                .Navigation(e => e.Department)
+                .AutoInclude();
+
+            modelBuilder.Entity<Employee>()
+                .Navigation(e => e.Position)
+                .AutoInclude();
+
+            modelBuilder.Entity<Employee>()
+                .Navigation(e => e.Project)
+                .AutoInclude();
+        }
     }
 }
