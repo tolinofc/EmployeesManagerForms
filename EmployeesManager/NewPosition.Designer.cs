@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             button_Cancel = new Button();
             button_OK = new Button();
             label3 = new Label();
             label1 = new Label();
             textBox_PositionName = new TextBox();
+            NewPositionValidate = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)NewPositionValidate).BeginInit();
             SuspendLayout();
             // 
             // button_Cancel
@@ -71,9 +74,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(27, 57);
             label1.Name = "label1";
-            label1.Size = new Size(39, 15);
+            label1.Size = new Size(44, 15);
             label1.TabIndex = 12;
-            label1.Text = "Název";
+            label1.Text = "Název*";
             label1.TextAlign = ContentAlignment.MiddleRight;
             // 
             // textBox_PositionName
@@ -82,11 +85,18 @@
             textBox_PositionName.Name = "textBox_PositionName";
             textBox_PositionName.Size = new Size(145, 23);
             textBox_PositionName.TabIndex = 7;
+            textBox_PositionName.Validating += ValidateTextbox;
+            // 
+            // NewPositionValidate
+            // 
+            NewPositionValidate.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+            NewPositionValidate.ContainerControl = this;
             // 
             // NewPosition
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoValidate = AutoValidate.Disable;
             ClientSize = new Size(239, 125);
             Controls.Add(button_Cancel);
             Controls.Add(button_OK);
@@ -95,6 +105,7 @@
             Controls.Add(textBox_PositionName);
             Name = "NewPosition";
             Text = "NewDepartment";
+            ((System.ComponentModel.ISupportInitialize)NewPositionValidate).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -106,5 +117,6 @@
         private Label label3;
         private Label label1;
         private TextBox textBox_PositionName;
+        private ErrorProvider NewPositionValidate;
     }
 }

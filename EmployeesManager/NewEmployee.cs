@@ -160,7 +160,7 @@ namespace EmployeesManager
             LoadCombobox<Project>(this.comboBox_Project);
         }
 
-        private void LoadCombobox<TEntity>(ComboBox comboBox) where TEntity : class, IEntity
+        private void LoadCombobox<TEntity>(ComboBox comboBox) where TEntity : class, IEntityWithName
         {
             using (var context = new MyContext())
             {

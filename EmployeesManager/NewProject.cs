@@ -29,16 +29,35 @@ namespace EmployeesManager
 
         private void button_OK_Click(object sender, EventArgs e)
         {
-            this.project.Name = textBox_ProjectName.Text;
-            this.project.Description = textBox_ProjectDescription.Text;
+            if (ValidateChildren())
+            {
+                this.project.Name = textBox_ProjectName.Text;
+                this.project.Description = textBox_ProjectDescription.Text;
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void button_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ValidateTextbox(object sender, CancelEventArgs e)
+        {
+            if (e.Cancel) return;
+            TextBox textBox = sender as TextBox;
+
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                e.Cancel = true;
+                this.NewProjectValidate.SetError(textBox, "Pole je povinne");
+            }
+            else
+            {
+                this.NewProjectValidate.SetError(textBox, null);
+            }
         }
     }
 }

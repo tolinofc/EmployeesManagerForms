@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             button_Cancel = new Button();
             button_OK = new Button();
             label3 = new Label();
@@ -35,6 +36,8 @@
             textBox_ProjectName = new TextBox();
             textBox_ProjectDescription = new TextBox();
             label2 = new Label();
+            NewProjectValidate = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)NewProjectValidate).BeginInit();
             SuspendLayout();
             // 
             // button_Cancel
@@ -73,9 +76,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(27, 57);
             label1.Name = "label1";
-            label1.Size = new Size(39, 15);
+            label1.Size = new Size(44, 15);
             label1.TabIndex = 12;
-            label1.Text = "Název";
+            label1.Text = "Název*";
             label1.TextAlign = ContentAlignment.MiddleRight;
             // 
             // textBox_ProjectName
@@ -84,6 +87,7 @@
             textBox_ProjectName.Name = "textBox_ProjectName";
             textBox_ProjectName.Size = new Size(145, 23);
             textBox_ProjectName.TabIndex = 7;
+            textBox_ProjectName.Validating += ValidateTextbox;
             // 
             // textBox_ProjectDescription
             // 
@@ -103,10 +107,16 @@
             label2.Text = "Popis";
             label2.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // NewProjectValidate
+            // 
+            NewProjectValidate.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+            NewProjectValidate.ContainerControl = this;
+            // 
             // NewProject
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoValidate = AutoValidate.Disable;
             ClientSize = new Size(239, 184);
             Controls.Add(button_Cancel);
             Controls.Add(button_OK);
@@ -117,6 +127,7 @@
             Controls.Add(textBox_ProjectName);
             Name = "NewProject";
             Text = "NewDepartment";
+            ((System.ComponentModel.ISupportInitialize)NewProjectValidate).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -130,5 +141,6 @@
         private TextBox textBox_ProjectName;
         private TextBox textBox_ProjectDescription;
         private Label label2;
+        private ErrorProvider NewProjectValidate;
     }
 }

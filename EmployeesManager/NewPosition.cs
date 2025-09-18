@@ -28,15 +28,34 @@ namespace EmployeesManager
 
         private void button_OK_Click(object sender, EventArgs e)
         {
-            this.position.Name = textBox_PositionName.Text;
+            if (ValidateChildren()) 
+            {
+                this.position.Name = textBox_PositionName.Text;
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void button_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ValidateTextbox(object sender, CancelEventArgs e)
+        {
+            if (e.Cancel) return;
+            TextBox textBox = sender as TextBox;
+
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                e.Cancel = true;
+                this.NewPositionValidate.SetError(textBox, "Pole je povinne");
+            }
+            else
+            {
+                this.NewPositionValidate.SetError(textBox, null);
+            }
         }
     }
 }

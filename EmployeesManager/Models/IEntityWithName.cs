@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeesManager
+namespace EmployeesManager.Models
 {
-    public interface IEntity
+    public interface IEntityWithName
     {
         int Id { get; set; }
         string Name { get; set; }
