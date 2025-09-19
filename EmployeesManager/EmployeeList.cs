@@ -1,4 +1,5 @@
 ﻿using EmployeesManager.Models;
+using Google.Protobuf.Compiler;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,6 +48,26 @@ namespace EmployeesManager
         {
             var employeesFromDb = context.Employees.ToList();
             this.list = new BindingList<Employee>(employeesFromDb);
+        }
+
+        private void dataGridViewEmployees_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView_Employees.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                NewEmployee formEmployee = dataGridView_Employees.Rows[e.RowIndex].Cells[e.ColumnIndex].Value as NewEmployee;
+
+                if (formEmployee.ShowDialog() == DialogResult.OK)
+                {
+                    this.list[this.dataGridView_Employees.CurrentRow.Index] = formEmployee.employee;
+                }
+            }
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            int row = dataGridView_Employees.SelectedRows.Count;
+
+            MessageBox.Show(row.ToString());
         }
     }
 }

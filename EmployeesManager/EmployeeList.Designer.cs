@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             dataGridView_Employees = new DataGridView();
-            button_AddNew = new Button();
             Name = new DataGridViewTextBoxColumn();
             Surname = new DataGridViewTextBoxColumn();
             Department = new DataGridViewTextBoxColumn();
             Position = new DataGridViewTextBoxColumn();
             Project = new DataGridViewTextBoxColumn();
+            buttonAdd = new Button();
+            buttonEdit = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView_Employees).BeginInit();
             SuspendLayout();
             // 
@@ -47,18 +48,9 @@
             dataGridView_Employees.Location = new Point(12, 12);
             dataGridView_Employees.Name = "dataGridView_Employees";
             dataGridView_Employees.ReadOnly = true;
-            dataGridView_Employees.Size = new Size(776, 380);
+            dataGridView_Employees.Size = new Size(543, 543);
             dataGridView_Employees.TabIndex = 0;
-            // 
-            // button_AddNew
-            // 
-            button_AddNew.Location = new Point(12, 415);
-            button_AddNew.Name = "button_AddNew";
-            button_AddNew.Size = new Size(75, 23);
-            button_AddNew.TabIndex = 1;
-            button_AddNew.Text = "Přidat";
-            button_AddNew.UseVisualStyleBackColor = true;
-            button_AddNew.Click += button_AddNew_Click;
+            dataGridView_Employees.CellContentDoubleClick += dataGridViewEmployees_CellContentDoubleClick;
             // 
             // Name
             // 
@@ -95,14 +87,37 @@
             Project.Name = "Project";
             Project.ReadOnly = true;
             // 
+            // buttonAdd
+            // 
+            buttonAdd.Location = new Point(12, 561);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Size = new Size(75, 23);
+            buttonAdd.TabIndex = 1;
+            buttonAdd.Text = "Přidat";
+            buttonAdd.UseVisualStyleBackColor = true;
+            buttonAdd.Click += button_AddNew_Click;
+            // 
+            // buttonEdit
+            // 
+            buttonEdit.Location = new Point(93, 561);
+            buttonEdit.Name = "buttonEdit";
+            buttonEdit.Size = new Size(75, 23);
+            buttonEdit.TabIndex = 2;
+            buttonEdit.Text = "Spravovat";
+            buttonEdit.UseVisualStyleBackColor = true;
+            buttonEdit.Click += buttonEdit_Click;
+            // 
             // EmployeeList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button_AddNew);
+            ClientSize = new Size(567, 596);
+            Controls.Add(buttonEdit);
+            Controls.Add(buttonAdd);
             Controls.Add(dataGridView_Employees);
-            Text = "EmployeeList";
+            MaximumSize = new Size(583, 635);
+            MinimumSize = new Size(583, 635);
+            Text = "Správa zaměstnanců";
             ((System.ComponentModel.ISupportInitialize)dataGridView_Employees).EndInit();
             ResumeLayout(false);
         }
@@ -110,11 +125,12 @@
         #endregion
 
         private DataGridView dataGridView_Employees;
-        private Button button_AddNew;
+        private Button buttonAdd;
         private DataGridViewTextBoxColumn Name;
         private DataGridViewTextBoxColumn Surname;
         private DataGridViewTextBoxColumn Department;
         private DataGridViewTextBoxColumn Position;
         private DataGridViewTextBoxColumn Project;
+        private Button buttonEdit;
     }
 }
