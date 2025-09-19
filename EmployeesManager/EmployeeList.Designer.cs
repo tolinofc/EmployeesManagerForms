@@ -48,9 +48,9 @@
             dataGridView_Employees.Location = new Point(12, 12);
             dataGridView_Employees.Name = "dataGridView_Employees";
             dataGridView_Employees.ReadOnly = true;
-            dataGridView_Employees.Size = new Size(543, 543);
+            dataGridView_Employees.Size = new Size(561, 543);
             dataGridView_Employees.TabIndex = 0;
-            dataGridView_Employees.CellContentDoubleClick += dataGridViewEmployees_CellContentDoubleClick;
+            dataGridView_Employees.CellDoubleClick += dataGridView_Employees_CellDoubleClick;
             // 
             // Name
             // 
@@ -111,12 +111,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(567, 596);
+            ClientSize = new Size(585, 596);
             Controls.Add(buttonEdit);
             Controls.Add(buttonAdd);
             Controls.Add(dataGridView_Employees);
-            MaximumSize = new Size(583, 635);
-            MinimumSize = new Size(583, 635);
+            MaximumSize = new Size(601, 635);
+            MinimumSize = new Size(601, 635);
             Text = "Správa zaměstnanců";
             ((System.ComponentModel.ISupportInitialize)dataGridView_Employees).EndInit();
             ResumeLayout(false);

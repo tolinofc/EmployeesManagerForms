@@ -1,6 +1,6 @@
 ﻿namespace EmployeesManager
 {
-    partial class NewEmployee
+    partial class FormEmployee
     {
         /// <summary>
         /// Required designer variable.
@@ -51,38 +51,40 @@
             // 
             // textBox_EmployeeName
             // 
-            textBox_EmployeeName.Location = new Point(65, 54);
+            textBox_EmployeeName.Location = new Point(64, 54);
             textBox_EmployeeName.Name = "textBox_EmployeeName";
-            textBox_EmployeeName.Size = new Size(145, 23);
+            textBox_EmployeeName.Size = new Size(146, 23);
             textBox_EmployeeName.TabIndex = 0;
             textBox_EmployeeName.Validating += ValidateTextbox;
             // 
             // textBox_EmployeeSurname
             // 
-            textBox_EmployeeSurname.Location = new Point(65, 83);
+            textBox_EmployeeSurname.Location = new Point(64, 83);
             textBox_EmployeeSurname.Name = "textBox_EmployeeSurname";
-            textBox_EmployeeSurname.Size = new Size(145, 23);
+            textBox_EmployeeSurname.Size = new Size(146, 23);
             textBox_EmployeeSurname.TabIndex = 1;
             textBox_EmployeeSurname.Validating += ValidateTextbox;
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Location = new Point(16, 57);
+            label1.Location = new Point(11, 57);
             label1.Name = "label1";
-            label1.Size = new Size(42, 15);
+            label1.Size = new Size(47, 15);
             label1.TabIndex = 1;
-            label1.Text = "Jméno";
+            label1.Text = "Jméno*";
             label1.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new Point(7, 86);
+            label2.Location = new Point(2, 86);
             label2.Name = "label2";
-            label2.Size = new Size(51, 15);
+            label2.Size = new Size(56, 15);
             label2.TabIndex = 1;
-            label2.Text = "Příjmení";
+            label2.Text = "Příjmení*";
             label2.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label3
@@ -90,11 +92,11 @@
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 15F);
-            label3.Location = new Point(33, 9);
+            label3.Location = new Point(82, 9);
             label3.Name = "label3";
-            label3.Size = new Size(176, 28);
+            label3.Size = new Size(126, 28);
             label3.TabIndex = 2;
-            label3.Text = "Nový zaměstnanec";
+            label3.Text = "Zaměstnanec";
             // 
             // button_OK
             // 
@@ -118,32 +120,35 @@
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Location = new Point(15, 115);
+            label4.Location = new Point(12, 115);
             label4.Name = "label4";
-            label4.Size = new Size(41, 15);
+            label4.Size = new Size(46, 15);
             label4.TabIndex = 1;
-            label4.Text = "Pozice";
+            label4.Text = "Pozice*";
             label4.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Location = new Point(6, 144);
+            label5.Location = new Point(-2, 144);
             label5.Name = "label5";
-            label5.Size = new Size(55, 15);
+            label5.Size = new Size(60, 15);
             label5.TabIndex = 1;
-            label5.Text = "Oddeleni";
+            label5.Text = "Oddeleni*";
             label5.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.Location = new Point(6, 173);
+            label6.Location = new Point(9, 173);
             label6.Name = "label6";
-            label6.Size = new Size(44, 15);
+            label6.Size = new Size(49, 15);
             label6.TabIndex = 1;
-            label6.Text = "Projekt";
+            label6.Text = "Projekt*";
             label6.TextAlign = ContentAlignment.MiddleRight;
             // 
             // button_AddNewPosition
@@ -187,17 +192,17 @@
             // comboBox_Position
             // 
             comboBox_Position.FormattingEnabled = true;
-            comboBox_Position.Location = new Point(65, 112);
+            comboBox_Position.Location = new Point(64, 112);
             comboBox_Position.Name = "comboBox_Position";
-            comboBox_Position.Size = new Size(144, 23);
+            comboBox_Position.Size = new Size(145, 23);
             comboBox_Position.TabIndex = 8;
             // 
             // comboBox_Project
             // 
             comboBox_Project.FormattingEnabled = true;
-            comboBox_Project.Location = new Point(65, 170);
+            comboBox_Project.Location = new Point(64, 170);
             comboBox_Project.Name = "comboBox_Project";
-            comboBox_Project.Size = new Size(144, 23);
+            comboBox_Project.Size = new Size(145, 23);
             comboBox_Project.TabIndex = 8;
             // 
             // NewEmployeeValidate
@@ -205,7 +210,7 @@
             NewEmployeeValidate.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             NewEmployeeValidate.ContainerControl = this;
             // 
-            // NewEmployee
+            // FormEmployee
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -227,7 +232,7 @@
             Controls.Add(label1);
             Controls.Add(textBox_EmployeeSurname);
             Controls.Add(textBox_EmployeeName);
-            Name = "NewEmployee";
+            Name = "FormEmployee";
             Text = "NewEmployeeForm";
             ((System.ComponentModel.ISupportInitialize)NewEmployeeValidate).EndInit();
             ResumeLayout(false);

@@ -11,15 +11,15 @@ using System.Windows.Forms;
 
 namespace EmployeesManager
 {
-    public partial class NewProject : Form
+    public partial class FormProject : Form
     {
         public Project project = new Project();
-        public NewProject()
+        public FormProject()
         {
             InitializeComponent();
         }
 
-        public NewProject(Project project) : this()
+        public FormProject(Project project) : this()
         {
             this.project = project;
 

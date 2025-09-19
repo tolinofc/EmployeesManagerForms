@@ -11,15 +11,15 @@ using System.Windows.Forms;
 
 namespace EmployeesManager
 {
-    public partial class NewPosition : Form
+    public partial class FormPosition : Form
     {
         public Position position = new Position();
-        public NewPosition()
+        public FormPosition()
         {
             InitializeComponent();
         }
 
-        public NewPosition(Position position) : this()
+        public FormPosition(Position position) : this()
         {
             this.position = position;
 
@@ -28,7 +28,7 @@ namespace EmployeesManager
 
         private void button_OK_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren()) 
+            if (ValidateChildren())
             {
                 this.position.Name = textBox_PositionName.Text;
 

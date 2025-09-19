@@ -1,6 +1,6 @@
 ﻿namespace EmployeesManager
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         ///  Required designer variable.
@@ -105,7 +105,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoValidate = AutoValidate.EnableAllowFocusChange;
+            AutoValidate = AutoValidate.Disable;
             ClientSize = new Size(315, 165);
             Controls.Add(label3);
             Controls.Add(button_Login);
@@ -114,7 +114,7 @@
             Controls.Add(label1);
             Controls.Add(textBox_Username);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Přihlásit se";
             ((System.ComponentModel.ISupportInitialize)checkLogin).EndInit();
             ResumeLayout(false);
             PerformLayout();

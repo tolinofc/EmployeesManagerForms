@@ -1,6 +1,6 @@
 ﻿namespace EmployeesManager
 {
-    partial class NewProject
+    partial class FormPosition
     {
         /// <summary>
         /// Required designer variable.
@@ -33,16 +33,14 @@
             button_OK = new Button();
             label3 = new Label();
             label1 = new Label();
-            textBox_ProjectName = new TextBox();
-            textBox_ProjectDescription = new TextBox();
-            label2 = new Label();
-            NewProjectValidate = new ErrorProvider(components);
-            ((System.ComponentModel.ISupportInitialize)NewProjectValidate).BeginInit();
+            textBox_PositionName = new TextBox();
+            NewPositionValidate = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)NewPositionValidate).BeginInit();
             SuspendLayout();
             // 
             // button_Cancel
             // 
-            button_Cancel.Location = new Point(152, 151);
+            button_Cancel.Location = new Point(152, 93);
             button_Cancel.Name = "button_Cancel";
             button_Cancel.Size = new Size(75, 23);
             button_Cancel.TabIndex = 19;
@@ -52,7 +50,7 @@
             // 
             // button_OK
             // 
-            button_OK.Location = new Point(71, 151);
+            button_OK.Location = new Point(71, 93);
             button_OK.Name = "button_OK";
             button_OK.Size = new Size(75, 23);
             button_OK.TabIndex = 18;
@@ -65,11 +63,11 @@
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 15F);
-            label3.Location = new Point(61, 9);
+            label3.Location = new Point(88, 9);
             label3.Name = "label3";
-            label3.Size = new Size(127, 28);
+            label3.Size = new Size(67, 28);
             label3.TabIndex = 14;
-            label3.Text = "Nový projekt";
+            label3.Text = "Pozice";
             // 
             // label1
             // 
@@ -81,53 +79,36 @@
             label1.Text = "Název*";
             label1.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // textBox_ProjectName
+            // textBox_PositionName
             // 
-            textBox_ProjectName.Location = new Point(76, 54);
-            textBox_ProjectName.Name = "textBox_ProjectName";
-            textBox_ProjectName.Size = new Size(145, 23);
-            textBox_ProjectName.TabIndex = 7;
-            textBox_ProjectName.Validating += ValidateTextbox;
+            textBox_PositionName.Location = new Point(76, 54);
+            textBox_PositionName.Name = "textBox_PositionName";
+            textBox_PositionName.Size = new Size(145, 23);
+            textBox_PositionName.TabIndex = 7;
+            textBox_PositionName.Validating += ValidateTextbox;
             // 
-            // textBox_ProjectDescription
+            // NewPositionValidate
             // 
-            textBox_ProjectDescription.Location = new Point(76, 83);
-            textBox_ProjectDescription.Multiline = true;
-            textBox_ProjectDescription.Name = "textBox_ProjectDescription";
-            textBox_ProjectDescription.Size = new Size(145, 62);
-            textBox_ProjectDescription.TabIndex = 7;
+            NewPositionValidate.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+            NewPositionValidate.ContainerControl = this;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(27, 86);
-            label2.Name = "label2";
-            label2.Size = new Size(36, 15);
-            label2.TabIndex = 12;
-            label2.Text = "Popis";
-            label2.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // NewProjectValidate
-            // 
-            NewProjectValidate.BlinkStyle = ErrorBlinkStyle.NeverBlink;
-            NewProjectValidate.ContainerControl = this;
-            // 
-            // NewProject
+            // FormPosition
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.Disable;
-            ClientSize = new Size(239, 184);
+            ClientSize = new Size(239, 125);
             Controls.Add(button_Cancel);
             Controls.Add(button_OK);
             Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox_ProjectDescription);
-            Controls.Add(textBox_ProjectName);
-            Name = "NewProject";
-            Text = "NewDepartment";
-            ((System.ComponentModel.ISupportInitialize)NewProjectValidate).EndInit();
+            Controls.Add(textBox_PositionName);
+            MaximumSize = new Size(255, 164);
+            MinimumSize = new Size(255, 164);
+            Name = "FormPosition";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Pozice";
+            ((System.ComponentModel.ISupportInitialize)NewPositionValidate).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -138,9 +119,7 @@
         private Button button_OK;
         private Label label3;
         private Label label1;
-        private TextBox textBox_ProjectName;
-        private TextBox textBox_ProjectDescription;
-        private Label label2;
-        private ErrorProvider NewProjectValidate;
+        private TextBox textBox_PositionName;
+        private ErrorProvider NewPositionValidate;
     }
 }

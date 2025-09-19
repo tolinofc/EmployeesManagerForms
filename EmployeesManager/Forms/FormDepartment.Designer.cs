@@ -1,6 +1,6 @@
 ﻿namespace EmployeesManager
 {
-    partial class NewDepartment
+    partial class FormDepartment
     {
         /// <summary>
         /// Required designer variable.
@@ -63,11 +63,11 @@
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 15F);
-            label3.Location = new Point(44, 9);
+            label3.Location = new Point(76, 9);
             label3.Name = "label3";
-            label3.Size = new Size(141, 28);
+            label3.Size = new Size(92, 28);
             label3.TabIndex = 14;
-            label3.Text = "Nové oddělení";
+            label3.Text = "Oddělení";
             // 
             // label1
             // 
@@ -92,7 +92,7 @@
             NewDepartmentValidate.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             NewDepartmentValidate.ContainerControl = this;
             // 
-            // NewDepartment
+            // FormDepartment
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -103,7 +103,11 @@
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(textBox_DepartmentName);
-            Name = "NewDepartment";
+            KeyPreview = true;
+            MaximumSize = new Size(255, 164);
+            MinimumSize = new Size(255, 164);
+            Name = "FormDepartment";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "NewDepartment";
             ((System.ComponentModel.ISupportInitialize)NewDepartmentValidate).EndInit();
             ResumeLayout(false);

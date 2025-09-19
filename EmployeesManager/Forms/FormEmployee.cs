@@ -12,16 +12,16 @@ using System.Windows.Forms;
 
 namespace EmployeesManager
 {
-    public partial class NewEmployee : Form
+    public partial class FormEmployee : Form
     {
         public Employee employee = new Employee();
-        public NewEmployee()
+        public FormEmployee()
         {
             InitializeComponent();
             LoadAllComboboxes();
         }
 
-        public NewEmployee(Employee employee) : this()
+        public FormEmployee(Employee employee) : this()
         {
             this.employee = employee;
 
@@ -69,7 +69,7 @@ namespace EmployeesManager
         {
             BindingList<Department> listDepartment = new BindingList<Department>();
 
-            NewDepartment formDepartment = new NewDepartment();
+            FormDepartment formDepartment = new FormDepartment();
 
             formDepartment.Show();
 
@@ -93,7 +93,7 @@ namespace EmployeesManager
         {
             BindingList<Position> listPosition = new BindingList<Position>();
 
-            NewPosition formPosition = new NewPosition();
+            FormPosition formPosition = new FormPosition();
 
             formPosition.Show();
 
@@ -117,7 +117,7 @@ namespace EmployeesManager
         {
             BindingList<Project> listProject = new BindingList<Project>();
 
-            NewProject formProject = new NewProject();
+            FormProject formProject = new FormProject();
 
             formProject.Show();
 
