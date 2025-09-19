@@ -36,6 +36,7 @@
             Project = new DataGridViewTextBoxColumn();
             buttonAdd = new Button();
             buttonEdit = new Button();
+            buttonDelete = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView_Employees).BeginInit();
             SuspendLayout();
             // 
@@ -103,15 +104,26 @@
             buttonEdit.Name = "buttonEdit";
             buttonEdit.Size = new Size(75, 23);
             buttonEdit.TabIndex = 2;
-            buttonEdit.Text = "Spravovat";
+            buttonEdit.Text = "Upravit";
             buttonEdit.UseVisualStyleBackColor = true;
             buttonEdit.Click += buttonEdit_Click;
+            // 
+            // buttonDelete
+            // 
+            buttonDelete.Location = new Point(498, 561);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(75, 23);
+            buttonDelete.TabIndex = 3;
+            buttonDelete.Text = "Odstranit";
+            buttonDelete.UseVisualStyleBackColor = true;
+            buttonDelete.Click += buttonDelete_Click;
             // 
             // EmployeeList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(585, 596);
+            Controls.Add(buttonDelete);
             Controls.Add(buttonEdit);
             Controls.Add(buttonAdd);
             Controls.Add(dataGridView_Employees);
@@ -132,5 +144,6 @@
         private DataGridViewTextBoxColumn Position;
         private DataGridViewTextBoxColumn Project;
         private Button buttonEdit;
+        private Button buttonDelete;
     }
 }

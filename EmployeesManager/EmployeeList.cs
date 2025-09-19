@@ -1,4 +1,5 @@
-﻿using EmployeesManager.Models;
+﻿using EmployeesManager.Forms;
+using EmployeesManager.Models;
 using Google.Protobuf.Compiler;
 using System;
 using System.Collections.Generic;
@@ -127,6 +128,13 @@ namespace EmployeesManager
 
                 default: break;
             }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            FormManager formManager = new FormManager(this.context);
+            formManager.ShowDialog();
+            this.reloadData();
         }
     }
 }

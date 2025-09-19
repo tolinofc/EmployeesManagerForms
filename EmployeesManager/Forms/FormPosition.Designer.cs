@@ -54,7 +54,7 @@
             button_OK.Name = "button_OK";
             button_OK.Size = new Size(75, 23);
             button_OK.TabIndex = 18;
-            button_OK.Text = "Přidat";
+            button_OK.Text = "Uložit";
             button_OK.UseVisualStyleBackColor = true;
             button_OK.Click += button_OK_Click;
             // 
