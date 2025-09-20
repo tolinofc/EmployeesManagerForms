@@ -79,8 +79,7 @@ namespace EmployeesManager
 
             switch (columnName)
             {
-                case "Name":
-                case "Surname":
+                case "FullName":
                     FormEmployee formEmployee = new FormEmployee(employeeToEdit);
 
                     if (formEmployee.ShowDialog() == DialogResult.OK)

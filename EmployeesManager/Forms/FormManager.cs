@@ -14,6 +14,7 @@ namespace EmployeesManager.Forms
     public partial class FormManager : Form
     {
         MyContext context;
+        BindingList<Employee> employeeList;
         BindingList<Department> departmentList;
         BindingList<Position> positionList;
         BindingList<Project> projectList;
@@ -22,16 +23,21 @@ namespace EmployeesManager.Forms
             this.context = context;
             InitializeComponent();
 
+            this.employeeList =   new BindingList<Employee>(this.context.Employees.ToList());
             this.departmentList = new BindingList<Department>(this.context.Departments.ToList());
-            this.positionList = new BindingList<Position>(this.context.Positions.ToList());
-            this.projectList = new BindingList<Project>(this.context.Projects.ToList());
+            this.positionList =   new BindingList<Position>(this.context.Positions.ToList());
+            this.projectList =    new BindingList<Project>(this.context.Projects.ToList());
 
+            this.listBoxEmployee.DataSource =   this.employeeList;
             this.listBoxDepartment.DataSource = this.departmentList;
-            this.listBoxPosition.DataSource = this.positionList;
-            this.listBoxProject.DataSource = this.projectList;
+            this.listBoxPosition.DataSource =   this.positionList;
+            this.listBoxProject.DataSource =    this.projectList;
 
         }
-
+        private void buttonDeleteEmployee_Click(object sender, EventArgs e)
+        {
+            DeleteSelectedItem<Employee>(this.listBoxEmployee, this.employeeList);
+        }
         private void buttonDeleteDepartment_Click(object sender, EventArgs e)
         {
             DeleteSelectedItem<Department>(this.listBoxDepartment, this.departmentList);

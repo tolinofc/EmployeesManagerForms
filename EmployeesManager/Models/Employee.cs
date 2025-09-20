@@ -17,5 +17,11 @@ namespace EmployeesManager.Models
         public virtual Department Department { get; set; }
         public virtual Position Position { get; set; }
         public virtual Project Project { get; set; }
+        public string FullName => $"{Name} {Surname}";
+
+        public override string ToString()
+        {
+            return $"{Name} {Surname}";
+        }
     }
 }

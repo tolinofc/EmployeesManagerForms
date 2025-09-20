@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             dataGridView_Employees = new DataGridView();
-            Name = new DataGridViewTextBoxColumn();
-            Surname = new DataGridViewTextBoxColumn();
+            FullName = new DataGridViewTextBoxColumn();
             Department = new DataGridViewTextBoxColumn();
             Position = new DataGridViewTextBoxColumn();
             Project = new DataGridViewTextBoxColumn();
@@ -45,27 +44,20 @@
             dataGridView_Employees.AllowUserToAddRows = false;
             dataGridView_Employees.AllowUserToDeleteRows = false;
             dataGridView_Employees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView_Employees.Columns.AddRange(new DataGridViewColumn[] { Name, Surname, Department, Position, Project });
+            dataGridView_Employees.Columns.AddRange(new DataGridViewColumn[] { FullName, Department, Position, Project });
             dataGridView_Employees.Location = new Point(12, 12);
             dataGridView_Employees.Name = "dataGridView_Employees";
             dataGridView_Employees.ReadOnly = true;
-            dataGridView_Employees.Size = new Size(561, 543);
+            dataGridView_Employees.Size = new Size(463, 543);
             dataGridView_Employees.TabIndex = 0;
             dataGridView_Employees.CellDoubleClick += dataGridView_Employees_CellDoubleClick;
             // 
-            // Name
+            // FullName
             // 
-            Name.DataPropertyName = "Name";
-            Name.HeaderText = "Jméno";
-            Name.Name = "Name";
-            Name.ReadOnly = true;
-            // 
-            // Surname
-            // 
-            Surname.DataPropertyName = "Surname";
-            Surname.HeaderText = "Příjmení";
-            Surname.Name = "Surname";
-            Surname.ReadOnly = true;
+            FullName.DataPropertyName = "FullName";
+            FullName.HeaderText = "Jméno";
+            FullName.Name = "FullName";
+            FullName.ReadOnly = true;
             // 
             // Department
             // 
@@ -110,7 +102,7 @@
             // 
             // buttonDelete
             // 
-            buttonDelete.Location = new Point(498, 561);
+            buttonDelete.Location = new Point(400, 561);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(75, 23);
             buttonDelete.TabIndex = 3;
@@ -122,13 +114,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(585, 596);
+            ClientSize = new Size(490, 596);
             Controls.Add(buttonDelete);
             Controls.Add(buttonEdit);
             Controls.Add(buttonAdd);
             Controls.Add(dataGridView_Employees);
-            MaximumSize = new Size(601, 635);
-            MinimumSize = new Size(601, 635);
+            MaximumSize = new Size(506, 635);
+            MinimumSize = new Size(506, 635);
+            Name = "EmployeeList";
             Text = "Správa zaměstnanců";
             ((System.ComponentModel.ISupportInitialize)dataGridView_Employees).EndInit();
             ResumeLayout(false);
@@ -138,12 +131,11 @@
 
         private DataGridView dataGridView_Employees;
         private Button buttonAdd;
-        private DataGridViewTextBoxColumn Name;
-        private DataGridViewTextBoxColumn Surname;
+        private Button buttonEdit;
+        private Button buttonDelete;
+        private DataGridViewTextBoxColumn FullName;
         private DataGridViewTextBoxColumn Department;
         private DataGridViewTextBoxColumn Position;
         private DataGridViewTextBoxColumn Project;
-        private Button buttonEdit;
-        private Button buttonDelete;
     }
 }

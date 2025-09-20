@@ -37,13 +37,16 @@
             label3 = new Label();
             buttonDeletePosition = new Button();
             buttonDeleteProject = new Button();
+            listBoxEmployee = new ListBox();
+            buttonDeleteEmployee = new Button();
+            label4 = new Label();
             SuspendLayout();
             // 
             // listBoxDepartment
             // 
             listBoxDepartment.FormattingEnabled = true;
             listBoxDepartment.ItemHeight = 15;
-            listBoxDepartment.Location = new Point(12, 43);
+            listBoxDepartment.Location = new Point(147, 43);
             listBoxDepartment.Name = "listBoxDepartment";
             listBoxDepartment.Size = new Size(129, 214);
             listBoxDepartment.TabIndex = 0;
@@ -52,7 +55,7 @@
             // 
             listBoxPosition.FormattingEnabled = true;
             listBoxPosition.ItemHeight = 15;
-            listBoxPosition.Location = new Point(147, 43);
+            listBoxPosition.Location = new Point(282, 43);
             listBoxPosition.Name = "listBoxPosition";
             listBoxPosition.Size = new Size(129, 214);
             listBoxPosition.TabIndex = 0;
@@ -61,14 +64,14 @@
             // 
             listBoxProject.FormattingEnabled = true;
             listBoxProject.ItemHeight = 15;
-            listBoxProject.Location = new Point(282, 43);
+            listBoxProject.Location = new Point(417, 43);
             listBoxProject.Name = "listBoxProject";
             listBoxProject.Size = new Size(129, 214);
             listBoxProject.TabIndex = 0;
             // 
             // buttonDeleteDepartment
             // 
-            buttonDeleteDepartment.Location = new Point(12, 264);
+            buttonDeleteDepartment.Location = new Point(147, 264);
             buttonDeleteDepartment.Name = "buttonDeleteDepartment";
             buttonDeleteDepartment.Size = new Size(75, 23);
             buttonDeleteDepartment.TabIndex = 1;
@@ -80,7 +83,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(12, 19);
+            label1.Location = new Point(147, 19);
             label1.Name = "label1";
             label1.Size = new Size(73, 21);
             label1.TabIndex = 2;
@@ -90,7 +93,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(147, 19);
+            label2.Location = new Point(282, 19);
             label2.Name = "label2";
             label2.Size = new Size(53, 21);
             label2.TabIndex = 2;
@@ -100,7 +103,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(282, 19);
+            label3.Location = new Point(417, 19);
             label3.Name = "label3";
             label3.Size = new Size(59, 21);
             label3.TabIndex = 2;
@@ -108,7 +111,7 @@
             // 
             // buttonDeletePosition
             // 
-            buttonDeletePosition.Location = new Point(147, 263);
+            buttonDeletePosition.Location = new Point(282, 263);
             buttonDeletePosition.Name = "buttonDeletePosition";
             buttonDeletePosition.Size = new Size(75, 23);
             buttonDeletePosition.TabIndex = 1;
@@ -118,7 +121,7 @@
             // 
             // buttonDeleteProject
             // 
-            buttonDeleteProject.Location = new Point(282, 263);
+            buttonDeleteProject.Location = new Point(417, 263);
             buttonDeleteProject.Name = "buttonDeleteProject";
             buttonDeleteProject.Size = new Size(75, 23);
             buttonDeleteProject.TabIndex = 1;
@@ -126,20 +129,54 @@
             buttonDeleteProject.UseVisualStyleBackColor = true;
             buttonDeleteProject.Click += buttonDeleteProject_Click;
             // 
+            // listBoxEmployee
+            // 
+            listBoxEmployee.FormattingEnabled = true;
+            listBoxEmployee.ItemHeight = 15;
+            listBoxEmployee.Location = new Point(12, 43);
+            listBoxEmployee.Name = "listBoxEmployee";
+            listBoxEmployee.Size = new Size(129, 214);
+            listBoxEmployee.TabIndex = 0;
+            // 
+            // buttonDeleteEmployee
+            // 
+            buttonDeleteEmployee.Location = new Point(12, 264);
+            buttonDeleteEmployee.Name = "buttonDeleteEmployee";
+            buttonDeleteEmployee.Size = new Size(75, 23);
+            buttonDeleteEmployee.TabIndex = 1;
+            buttonDeleteEmployee.Text = "Odstranit";
+            buttonDeleteEmployee.UseVisualStyleBackColor = true;
+            buttonDeleteEmployee.Click += buttonDeleteEmployee_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F);
+            label4.Location = new Point(12, 19);
+            label4.Name = "label4";
+            label4.Size = new Size(102, 21);
+            label4.TabIndex = 2;
+            label4.Text = "Zaměstnanec";
+            // 
             // FormManager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(423, 301);
+            ClientSize = new Size(554, 301);
             Controls.Add(label3);
             Controls.Add(label2);
+            Controls.Add(label4);
             Controls.Add(label1);
             Controls.Add(buttonDeleteProject);
             Controls.Add(buttonDeletePosition);
+            Controls.Add(buttonDeleteEmployee);
             Controls.Add(buttonDeleteDepartment);
             Controls.Add(listBoxProject);
             Controls.Add(listBoxPosition);
+            Controls.Add(listBoxEmployee);
             Controls.Add(listBoxDepartment);
+            MaximumSize = new Size(570, 340);
+            MinimumSize = new Size(570, 340);
             Name = "FormManager";
             Text = "FormManager";
             ResumeLayout(false);
@@ -157,5 +194,8 @@
         private Label label3;
         private Button buttonDeletePosition;
         private Button buttonDeleteProject;
+        private ListBox listBoxEmployee;
+        private Button buttonDeleteEmployee;
+        private Label label4;
     }
 }
