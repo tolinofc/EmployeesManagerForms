@@ -1,0 +1,78 @@
+SET FOREIGN_KEY_CHECKS=0;
+
+TRUNCATE TABLE `Employees`;
+TRUNCATE TABLE `Departments`;
+TRUNCATE TABLE `Positions`;
+TRUNCATE TABLE `Projects`;
+
+SET FOREIGN_KEY_CHECKS=1;
+
+INSERT INTO `Departments`(`ID`, `Name`) VALUES
+(1, 'IT oddělení'),
+(2, 'Lidské zdroje'),
+(3, 'Marketing'),
+(4, 'Obchodní oddělení'),
+(5, 'Finanční oddělení'),
+(6, 'Vývoj software'),
+(7, 'Výzkum a inovace'),
+(8, 'Zákaznická podpora'),
+(9, 'Logistika'),
+(10, 'Právní oddělení'),
+(11, 'Oddělení kvality (QA)'),
+(12, 'Provozní oddělení'),
+(13, 'Management'),
+(14, 'Grafické studio'),
+(15, 'Analytické oddělení');
+
+INSERT INTO `Positions`(`ID`, `Name`) VALUES
+(1, 'Backend Developer'),
+(2, 'Frontend Developer'),
+(3, 'Projektový manažer'),
+(4, 'Databázový administrátor'),
+(5, 'Síťový specialista'),
+(6, 'Tester / QA Engineer'),
+(7, 'HR Generalista'),
+(8, 'Marketingový specialista'),
+(9, 'Obchodní zástupce'),
+(10, 'Finanční analytik'),
+(11, 'Grafik'),
+(12, 'UX/UI Designer'),
+(13, 'Technický ředitel (CTO)'),
+(14, 'Office Manager'),
+(15, 'Datový analytik');
+
+INSERT INTO `Projects`(`ID`, `Name`, `Description`) VALUES
+(1, 'Project Phoenix', 'Vývoj nové e-commerce platformy pro klienta XYZ.'),
+(2, 'Project Titan', 'Migrace stávající infrastruktury na cloudové řešení.'),
+(3, 'Quantum Leap', 'Optimalizace interních databázových systémů.'),
+(4, 'Odyssey', 'Vytvoření mobilní aplikace pro správu úkolů.'),
+(5, 'Helios', 'Marketingová kampaň pro uvedení nového produktu na trh.'),
+(6, 'Internal Audit 2025', 'Interní bezpečnostní a finanční audit systémů.'),
+(7, 'Sirius', 'Vývoj analytického nástroje pro predikci prodejů.'),
+(8, 'Vega', 'Redesign hlavních webových stránek společnosti.'),
+(9, 'Galaxy', 'Implementace nového CRM systému pro obchodní oddělení.'),
+(10, 'Nebula', 'Výzkum využití umělé inteligence v zákaznické podpoře.'),
+(11, 'Comet', 'Vytvoření interní znalostní báze pro zaměstnance.'),
+(12, 'Apollo', 'Nasazení DevOps postupů a automatizace build procesů.'),
+(13, 'Jupiter', 'Rozšíření logistického centra a optimalizace skladových procesů.'),
+(14, 'Orion', 'Program pro školení a rozvoj zaměstnanců.'),
+(15, 'Polaris', 'Analýza trhu a konkurence v novém segmentu.');
+
+INSERT INTO `Employees`(`ID`, `Name`, `Surname`, `DepartmentID`, `PositionID`, `ProjectID`) VALUES
+(1, 'Jan', 'Novák', 6, 1, 1),
+(2, 'Eva', 'Svobodová', 6, 2, 1),
+(3, 'Petr', 'Dvořák', 1, 4, 3),
+(4, 'Lucie', 'Černá', 3, 8, 5),
+(5, 'Martin', 'Procházka', 1, 3, 2),
+(6, 'Kateřina', 'Kučerová', 2, 7, 14),
+(7, 'Tomáš', 'Veselý', 4, 9, 9),
+(8, 'Veronika', 'Horáková', 11, 6, 1),
+(9, 'Jakub', 'Němec', 6, 1, 12),
+(10, 'Anna', 'Marková', 5, 10, 6),
+(11, 'Pavel', 'Pokorný', 13, 13, 11),
+(12, 'Michaela', 'Zemanová', 14, 12, 8),
+(13, 'David', 'Král', 15, 15, 7),
+(14, 'Tereza', 'Jelínková', 8, 14, 6),
+(15, 'Filip', 'Růžička', 6, 1, 4),
+(16, 'Adéla', 'Benešová', 3, 8, 5),
+(17, 'Lukáš', 'Fiala', 1, 5, 2);
