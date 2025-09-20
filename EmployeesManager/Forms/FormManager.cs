@@ -18,6 +18,7 @@ namespace EmployeesManager.Forms
         BindingList<Department> departmentList;
         BindingList<Position> positionList;
         BindingList<Project> projectList;
+
         public FormManager(MyContext context)
         {
             this.context = context;
@@ -34,10 +35,12 @@ namespace EmployeesManager.Forms
             this.listBoxProject.DataSource =    this.projectList;
 
         }
+
         private void buttonDeleteEmployee_Click(object sender, EventArgs e)
         {
             DeleteSelectedItem<Employee>(this.listBoxEmployee, this.employeeList);
         }
+
         private void buttonDeleteDepartment_Click(object sender, EventArgs e)
         {
             DeleteSelectedItem<Department>(this.listBoxDepartment, this.departmentList);
@@ -53,11 +56,10 @@ namespace EmployeesManager.Forms
             DeleteSelectedItem<Project>(this.listBoxProject, this.projectList);
         }
 
-        private void DeleteSelectedItem<TEntity>(ListBox listBox, BindingList<TEntity> list) where TEntity : class
+        private void DeleteSelectedItem<TEntity>(ListBox listBox, BindingList<TEntity> list) where TEntity : class, IEntityWithName
         {
             if (listBox.SelectedItem is not TEntity itemToDelete)
             {
-                MessageBox.Show("Prosím, vyberte položku ke smazání.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -69,15 +71,21 @@ namespace EmployeesManager.Forms
 
             try
             {
-                this.context.Set<TEntity>().Remove(itemToDelete);
+                using (MyContext context = new MyContext())
+                {
+                    var entityInDb = context.Set<TEntity>().Find(itemToDelete.Id);
 
-                this.context.SaveChanges();
-
-                list.Remove(itemToDelete);
+                    if (entityInDb != null)
+                    {
+                        context.Set<TEntity>().Remove(entityInDb);
+                        context.SaveChanges();
+                        list.Remove(itemToDelete);
+                    }
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Položku nelze smazat, protože je používána v jiné části aplikace.\n\n" + ex.Message, "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Položku nelze smazat, protože je k ní přiřazen nějaký zaměstnanec.", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

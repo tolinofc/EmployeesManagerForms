@@ -33,6 +33,24 @@ namespace EmployeesManager
             modelBuilder.Entity<Employee>()
                 .Navigation(e => e.Project)
                 .AutoInclude();
+            
+            modelBuilder.Entity<Employee>()
+                .HasOne(e => e.Department)
+                .WithMany()
+                .HasForeignKey(e => e.DepartmentId)
+                .OnDelete(DeleteBehavior.Restrict);
+            
+            modelBuilder.Entity<Employee>()
+                .HasOne(e => e.Position)
+                .WithMany()
+                .HasForeignKey(e => e.PositionId)
+                .OnDelete(DeleteBehavior.Restrict);
+            
+            modelBuilder.Entity<Employee>()
+                .HasOne(e => e.Project)
+                .WithMany()
+                .HasForeignKey(e => e.ProjectId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
