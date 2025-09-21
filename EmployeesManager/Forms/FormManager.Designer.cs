@@ -178,7 +178,7 @@
             MaximumSize = new Size(570, 340);
             MinimumSize = new Size(570, 340);
             Name = "FormManager";
-            Text = "FormManager";
+            Text = "Odstranit";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -37,6 +37,7 @@
             buttonEdit = new Button();
             buttonDelete = new Button();
             buttonImportExport = new Button();
+            buttonStats = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView_Employees).BeginInit();
             SuspendLayout();
             // 
@@ -44,6 +45,7 @@
             // 
             dataGridView_Employees.AllowUserToAddRows = false;
             dataGridView_Employees.AllowUserToDeleteRows = false;
+            dataGridView_Employees.AllowUserToOrderColumns = true;
             dataGridView_Employees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView_Employees.Columns.AddRange(new DataGridViewColumn[] { FullName, Department, Position, Project });
             dataGridView_Employees.Location = new Point(12, 12);
@@ -103,7 +105,7 @@
             // 
             // buttonDelete
             // 
-            buttonDelete.Location = new Point(400, 561);
+            buttonDelete.Location = new Point(174, 561);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(75, 23);
             buttonDelete.TabIndex = 3;
@@ -113,7 +115,7 @@
             // 
             // buttonImportExport
             // 
-            buttonImportExport.Location = new Point(299, 561);
+            buttonImportExport.Location = new Point(255, 561);
             buttonImportExport.Name = "buttonImportExport";
             buttonImportExport.Size = new Size(95, 23);
             buttonImportExport.TabIndex = 2;
@@ -121,11 +123,22 @@
             buttonImportExport.UseVisualStyleBackColor = true;
             buttonImportExport.Click += buttonImportExport_Click;
             // 
+            // buttonStats
+            // 
+            buttonStats.Location = new Point(356, 561);
+            buttonStats.Name = "buttonStats";
+            buttonStats.Size = new Size(75, 23);
+            buttonStats.TabIndex = 4;
+            buttonStats.Text = "Statistiky";
+            buttonStats.UseVisualStyleBackColor = true;
+            buttonStats.Click += buttonStats_Click;
+            // 
             // EmployeeList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(490, 596);
+            Controls.Add(buttonStats);
             Controls.Add(buttonImportExport);
             Controls.Add(buttonDelete);
             Controls.Add(buttonEdit);
@@ -150,5 +163,6 @@
         private DataGridViewTextBoxColumn Position;
         private DataGridViewTextBoxColumn Project;
         private Button buttonImportExport;
+        private Button buttonStats;
     }
 }

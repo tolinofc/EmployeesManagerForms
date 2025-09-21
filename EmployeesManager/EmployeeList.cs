@@ -58,6 +58,9 @@ namespace EmployeesManager
 
         private void dataGridView_Employees_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
+            if (e.ColumnIndex == -1) return;
+
             EditSelectedItem(e.RowIndex, e.ColumnIndex);
         }
 
@@ -90,38 +93,32 @@ namespace EmployeesManager
                     break;
 
                 case "Department":
-                    if (employeeToEdit.Department != null)
+                    FormDepartment formDepartment = new FormDepartment(employeeToEdit.Department);
+
+                    if (formDepartment.ShowDialog() == DialogResult.OK)
                     {
-                        FormDepartment formDepartment = new FormDepartment(employeeToEdit.Department);
-                        if (formDepartment.ShowDialog() == DialogResult.OK)
-                        {
-                            this.context.SaveChanges();
-                            reloadData();
-                        }
+                        this.context.SaveChanges();
+                        reloadData();
                     }
                     break;
 
                 case "Position":
-                    if (employeeToEdit.Position != null)
+                    FormPosition formPosition = new FormPosition(employeeToEdit.Position);
+
+                    if (formPosition.ShowDialog() == DialogResult.OK)
                     {
-                        FormPosition formPosition = new FormPosition(employeeToEdit.Position);
-                        if (formPosition.ShowDialog() == DialogResult.OK)
-                        {
-                            this.context.SaveChanges();
-                            reloadData();
-                        }
+                        this.context.SaveChanges();
+                        reloadData();
                     }
                     break;
 
                 case "Project":
-                    if (employeeToEdit.Project != null)
+                    FormProject formProject = new FormProject(employeeToEdit.Project);
+
+                    if (formProject.ShowDialog() == DialogResult.OK)
                     {
-                        FormProject formProject = new FormProject(employeeToEdit.Project);
-                        if (formProject.ShowDialog() == DialogResult.OK)
-                        {
-                            this.context.SaveChanges();
-                            reloadData();
-                        }
+                        this.context.SaveChanges();
+                        reloadData();
                     }
                     break;
             }
@@ -176,6 +173,13 @@ namespace EmployeesManager
                     MessageBox.Show("Při exportu dat došlo k chybě.", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void buttonStats_Click(object sender, EventArgs e)
+        {
+            FormStats formStats = new FormStats(this.list);
+
+            formStats.ShowDialog();
         }
     }
 }

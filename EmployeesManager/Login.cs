@@ -15,7 +15,7 @@ namespace EmployeesManager
             {
                 if (!LoginCredentials.CheckLogin(textBox_Username.Text, textBox_Password.Text))
                 {
-                    MessageBox.Show("Zadane udaje nejsou spravne");
+                    MessageBox.Show("Zadane udaje nejsou spravne", "Neplatné údaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
