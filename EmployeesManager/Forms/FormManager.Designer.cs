@@ -49,7 +49,7 @@
             listBoxDepartment.Location = new Point(147, 43);
             listBoxDepartment.Name = "listBoxDepartment";
             listBoxDepartment.Size = new Size(129, 214);
-            listBoxDepartment.TabIndex = 0;
+            listBoxDepartment.TabIndex = 2;
             // 
             // listBoxPosition
             // 
@@ -58,7 +58,7 @@
             listBoxPosition.Location = new Point(282, 43);
             listBoxPosition.Name = "listBoxPosition";
             listBoxPosition.Size = new Size(129, 214);
-            listBoxPosition.TabIndex = 0;
+            listBoxPosition.TabIndex = 4;
             // 
             // listBoxProject
             // 
@@ -67,14 +67,14 @@
             listBoxProject.Location = new Point(417, 43);
             listBoxProject.Name = "listBoxProject";
             listBoxProject.Size = new Size(129, 214);
-            listBoxProject.TabIndex = 0;
+            listBoxProject.TabIndex = 6;
             // 
             // buttonDeleteDepartment
             // 
             buttonDeleteDepartment.Location = new Point(147, 264);
             buttonDeleteDepartment.Name = "buttonDeleteDepartment";
             buttonDeleteDepartment.Size = new Size(75, 23);
-            buttonDeleteDepartment.TabIndex = 1;
+            buttonDeleteDepartment.TabIndex = 3;
             buttonDeleteDepartment.Text = "Odstranit";
             buttonDeleteDepartment.UseVisualStyleBackColor = true;
             buttonDeleteDepartment.Click += buttonDeleteDepartment_Click;
@@ -114,7 +114,7 @@
             buttonDeletePosition.Location = new Point(282, 263);
             buttonDeletePosition.Name = "buttonDeletePosition";
             buttonDeletePosition.Size = new Size(75, 23);
-            buttonDeletePosition.TabIndex = 1;
+            buttonDeletePosition.TabIndex = 5;
             buttonDeletePosition.Text = "Odstranit";
             buttonDeletePosition.UseVisualStyleBackColor = true;
             buttonDeletePosition.Click += buttonDeletePosition_Click;
@@ -124,7 +124,7 @@
             buttonDeleteProject.Location = new Point(417, 263);
             buttonDeleteProject.Name = "buttonDeleteProject";
             buttonDeleteProject.Size = new Size(75, 23);
-            buttonDeleteProject.TabIndex = 1;
+            buttonDeleteProject.TabIndex = 7;
             buttonDeleteProject.Text = "Odstranit";
             buttonDeleteProject.UseVisualStyleBackColor = true;
             buttonDeleteProject.Click += buttonDeleteProject_Click;

@@ -86,7 +86,7 @@
             buttonAdd.Location = new Point(12, 561);
             buttonAdd.Name = "buttonAdd";
             buttonAdd.Size = new Size(75, 23);
-            buttonAdd.TabIndex = 1;
+            buttonAdd.TabIndex = 0;
             buttonAdd.Text = "Přidat";
             buttonAdd.UseVisualStyleBackColor = true;
             buttonAdd.Click += button_AddNew_Click;
@@ -96,7 +96,7 @@
             buttonEdit.Location = new Point(93, 561);
             buttonEdit.Name = "buttonEdit";
             buttonEdit.Size = new Size(75, 23);
-            buttonEdit.TabIndex = 2;
+            buttonEdit.TabIndex = 1;
             buttonEdit.Text = "Upravit";
             buttonEdit.UseVisualStyleBackColor = true;
             buttonEdit.Click += buttonEdit_Click;
@@ -116,7 +116,7 @@
             buttonImportExport.Location = new Point(299, 561);
             buttonImportExport.Name = "buttonImportExport";
             buttonImportExport.Size = new Size(95, 23);
-            buttonImportExport.TabIndex = 4;
+            buttonImportExport.TabIndex = 2;
             buttonImportExport.Text = "Import/Export";
             buttonImportExport.UseVisualStyleBackColor = true;
             buttonImportExport.Click += buttonImportExport_Click;

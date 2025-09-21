@@ -103,7 +103,7 @@
             button_OK.Location = new Point(64, 199);
             button_OK.Name = "button_OK";
             button_OK.Size = new Size(75, 23);
-            button_OK.TabIndex = 5;
+            button_OK.TabIndex = 8;
             button_OK.Text = "Uložit";
             button_OK.UseVisualStyleBackColor = true;
             button_OK.Click += button_OK_Click;
@@ -113,7 +113,7 @@
             button_Cancel.Location = new Point(145, 199);
             button_Cancel.Name = "button_Cancel";
             button_Cancel.Size = new Size(75, 23);
-            button_Cancel.TabIndex = 6;
+            button_Cancel.TabIndex = 9;
             button_Cancel.Text = "Zrušit";
             button_Cancel.UseVisualStyleBackColor = true;
             button_Cancel.Click += button_Cancel_Click;
@@ -156,7 +156,7 @@
             button_AddNewPosition.Location = new Point(215, 111);
             button_AddNewPosition.Name = "button_AddNewPosition";
             button_AddNewPosition.Size = new Size(52, 23);
-            button_AddNewPosition.TabIndex = 7;
+            button_AddNewPosition.TabIndex = 3;
             button_AddNewPosition.Text = "Přidat";
             button_AddNewPosition.UseVisualStyleBackColor = true;
             button_AddNewPosition.Click += button_AddNewPosition_Click;
@@ -166,7 +166,7 @@
             button_AddNewDepartment.Location = new Point(215, 140);
             button_AddNewDepartment.Name = "button_AddNewDepartment";
             button_AddNewDepartment.Size = new Size(52, 23);
-            button_AddNewDepartment.TabIndex = 7;
+            button_AddNewDepartment.TabIndex = 5;
             button_AddNewDepartment.Text = "Přidat";
             button_AddNewDepartment.UseVisualStyleBackColor = true;
             button_AddNewDepartment.Click += button_AddNewDepartment_Click;
@@ -187,7 +187,7 @@
             comboBox_Department.Location = new Point(64, 141);
             comboBox_Department.Name = "comboBox_Department";
             comboBox_Department.Size = new Size(144, 23);
-            comboBox_Department.TabIndex = 8;
+            comboBox_Department.TabIndex = 4;
             // 
             // comboBox_Position
             // 
@@ -195,7 +195,7 @@
             comboBox_Position.Location = new Point(64, 112);
             comboBox_Position.Name = "comboBox_Position";
             comboBox_Position.Size = new Size(145, 23);
-            comboBox_Position.TabIndex = 8;
+            comboBox_Position.TabIndex = 2;
             // 
             // comboBox_Project
             // 
@@ -203,7 +203,7 @@
             comboBox_Project.Location = new Point(64, 170);
             comboBox_Project.Name = "comboBox_Project";
             comboBox_Project.Size = new Size(145, 23);
-            comboBox_Project.TabIndex = 8;
+            comboBox_Project.TabIndex = 6;
             // 
             // NewEmployeeValidate
             // 

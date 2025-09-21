@@ -52,7 +52,7 @@
             buttonImport.Location = new Point(12, 60);
             buttonImport.Name = "buttonImport";
             buttonImport.Size = new Size(156, 23);
-            buttonImport.TabIndex = 16;
+            buttonImport.TabIndex = 0;
             buttonImport.Text = "Importovat ze souboru";
             buttonImport.UseVisualStyleBackColor = true;
             buttonImport.Click += buttonImport_Click;
@@ -62,7 +62,7 @@
             buttonExport.Location = new Point(12, 89);
             buttonExport.Name = "buttonExport";
             buttonExport.Size = new Size(156, 23);
-            buttonExport.TabIndex = 17;
+            buttonExport.TabIndex = 1;
             buttonExport.Text = "Exportovat do souboru";
             buttonExport.UseVisualStyleBackColor = true;
             buttonExport.Click += buttonExport_Click;

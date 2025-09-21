@@ -45,7 +45,7 @@
             button_Cancel.Location = new Point(152, 151);
             button_Cancel.Name = "button_Cancel";
             button_Cancel.Size = new Size(75, 23);
-            button_Cancel.TabIndex = 19;
+            button_Cancel.TabIndex = 3;
             button_Cancel.Text = "Zrušit";
             button_Cancel.UseVisualStyleBackColor = true;
             button_Cancel.Click += button_Cancel_Click;
@@ -55,7 +55,7 @@
             button_OK.Location = new Point(71, 151);
             button_OK.Name = "button_OK";
             button_OK.Size = new Size(75, 23);
-            button_OK.TabIndex = 18;
+            button_OK.TabIndex = 2;
             button_OK.Text = "Uložit";
             button_OK.UseVisualStyleBackColor = true;
             button_OK.Click += button_OK_Click;
@@ -87,7 +87,7 @@
             textBox_ProjectName.Location = new Point(76, 54);
             textBox_ProjectName.Name = "textBox_ProjectName";
             textBox_ProjectName.Size = new Size(145, 23);
-            textBox_ProjectName.TabIndex = 7;
+            textBox_ProjectName.TabIndex = 0;
             textBox_ProjectName.Validating += ValidateTextbox;
             // 
             // textBox_ProjectDescription
@@ -96,7 +96,7 @@
             textBox_ProjectDescription.Multiline = true;
             textBox_ProjectDescription.Name = "textBox_ProjectDescription";
             textBox_ProjectDescription.Size = new Size(145, 62);
-            textBox_ProjectDescription.TabIndex = 7;
+            textBox_ProjectDescription.TabIndex = 1;
             // 
             // label2
             // 

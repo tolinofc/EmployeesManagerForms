@@ -62,7 +62,7 @@
             textBox_Password.Name = "textBox_Password";
             textBox_Password.PasswordChar = '*';
             textBox_Password.Size = new Size(160, 23);
-            textBox_Password.TabIndex = 2;
+            textBox_Password.TabIndex = 1;
             textBox_Password.Validating += ValidateTextbox;
             // 
             // label2
@@ -79,7 +79,7 @@
             button_Login.Location = new Point(204, 132);
             button_Login.Name = "button_Login";
             button_Login.Size = new Size(75, 23);
-            button_Login.TabIndex = 4;
+            button_Login.TabIndex = 2;
             button_Login.Text = "Přihlásit se";
             button_Login.UseVisualStyleBackColor = true;
             button_Login.Click += button_Login_Click;
@@ -101,7 +101,7 @@
             checkLogin.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             checkLogin.ContainerControl = this;
             // 
-            // Form1
+            // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -113,7 +113,7 @@
             Controls.Add(textBox_Password);
             Controls.Add(label1);
             Controls.Add(textBox_Username);
-            Name = "Form1";
+            Name = "Login";
             Text = "Přihlásit se";
             ((System.ComponentModel.ISupportInitialize)checkLogin).EndInit();
             ResumeLayout(false);

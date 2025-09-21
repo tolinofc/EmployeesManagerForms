@@ -43,7 +43,7 @@
             button_Cancel.Location = new Point(152, 93);
             button_Cancel.Name = "button_Cancel";
             button_Cancel.Size = new Size(75, 23);
-            button_Cancel.TabIndex = 19;
+            button_Cancel.TabIndex = 2;
             button_Cancel.Text = "Zrušit";
             button_Cancel.UseVisualStyleBackColor = true;
             button_Cancel.Click += button_Cancel_Click;
@@ -53,7 +53,7 @@
             button_OK.Location = new Point(71, 93);
             button_OK.Name = "button_OK";
             button_OK.Size = new Size(75, 23);
-            button_OK.TabIndex = 18;
+            button_OK.TabIndex = 1;
             button_OK.Text = "Uložit";
             button_OK.UseVisualStyleBackColor = true;
             button_OK.Click += button_OK_Click;
@@ -84,7 +84,7 @@
             textBox_DepartmentName.Location = new Point(76, 54);
             textBox_DepartmentName.Name = "textBox_DepartmentName";
             textBox_DepartmentName.Size = new Size(145, 23);
-            textBox_DepartmentName.TabIndex = 7;
+            textBox_DepartmentName.TabIndex = 0;
             textBox_DepartmentName.Validating += ValidateTextbox;
             // 
             // NewDepartmentValidate
