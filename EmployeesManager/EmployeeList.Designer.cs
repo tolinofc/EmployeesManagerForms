@@ -36,6 +36,7 @@
             buttonAdd = new Button();
             buttonEdit = new Button();
             buttonDelete = new Button();
+            buttonImportExport = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView_Employees).BeginInit();
             SuspendLayout();
             // 
@@ -110,11 +111,22 @@
             buttonDelete.UseVisualStyleBackColor = true;
             buttonDelete.Click += buttonDelete_Click;
             // 
+            // buttonImportExport
+            // 
+            buttonImportExport.Location = new Point(299, 561);
+            buttonImportExport.Name = "buttonImportExport";
+            buttonImportExport.Size = new Size(95, 23);
+            buttonImportExport.TabIndex = 4;
+            buttonImportExport.Text = "Import/Export";
+            buttonImportExport.UseVisualStyleBackColor = true;
+            buttonImportExport.Click += buttonImportExport_Click;
+            // 
             // EmployeeList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(490, 596);
+            Controls.Add(buttonImportExport);
             Controls.Add(buttonDelete);
             Controls.Add(buttonEdit);
             Controls.Add(buttonAdd);
@@ -137,5 +149,6 @@
         private DataGridViewTextBoxColumn Department;
         private DataGridViewTextBoxColumn Position;
         private DataGridViewTextBoxColumn Project;
+        private Button buttonImportExport;
     }
 }

@@ -124,8 +124,6 @@ namespace EmployeesManager
                         }
                     }
                     break;
-
-                default: break;
             }
         }
 
@@ -134,6 +132,50 @@ namespace EmployeesManager
             FormManager formManager = new FormManager(this.context);
             formManager.ShowDialog();
             this.reloadData();
+        }
+
+        private void buttonImportExport_Click(object sender, EventArgs e)
+        {
+            FormImportExport form = new FormImportExport();
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                if (form.SelectedAction == ImportExportAction.Export)
+                {
+                    ExportDataToFile();
+                }
+                else if (form.SelectedAction == ImportExportAction.Import)
+                {
+                    // ImportDataFromFile();
+                }
+            }
+        }
+
+        private void ExportDataToFile()
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "CSV soubor (*.csv)|*.csv|Textový soubor (*.txt)|*.txt";
+            saveFileDialog.Title = "Exportovat zaměstnance do souboru";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    using (StreamWriter writer = new StreamWriter(saveFileDialog.FileName))
+                    {
+                        foreach (Employee emp in this.list)
+                        {
+                            string line = $"{emp.Id};{emp.Name};{emp.Surname};{emp.Department};{emp.Position};{emp.Project}";
+                            writer.WriteLine(line);
+                        }
+                    }
+                    MessageBox.Show("Data byla úspěšně exportována.", "Export dokončen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Při exportu dat došlo k chybě.", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
