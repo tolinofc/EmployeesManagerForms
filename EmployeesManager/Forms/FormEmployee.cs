@@ -153,6 +153,22 @@ namespace EmployeesManager
             }
         }
 
+        private void ValidateComboBox(object sender, CancelEventArgs e)
+        {
+            if (e.Cancel) return;
+            ComboBox comboBox = sender as ComboBox;
+
+            if (comboBox.SelectedItem == null)
+            {
+                e.Cancel = true;
+                this.NewEmployeeValidate.SetError(comboBox, "Musíte vybrat položku ze seznamu.");
+            }
+            else
+            {
+                this.NewEmployeeValidate.SetError(comboBox, null);
+            }
+        }
+
         private void LoadAllComboboxes()
         {
             LoadCombobox<Department>(this.comboBox_Department);

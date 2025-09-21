@@ -188,6 +188,7 @@
             comboBox_Department.Name = "comboBox_Department";
             comboBox_Department.Size = new Size(144, 23);
             comboBox_Department.TabIndex = 4;
+            comboBox_Department.Validating += ValidateComboBox;
             // 
             // comboBox_Position
             // 
@@ -196,6 +197,7 @@
             comboBox_Position.Name = "comboBox_Position";
             comboBox_Position.Size = new Size(145, 23);
             comboBox_Position.TabIndex = 2;
+            comboBox_Position.Validating += ValidateComboBox;
             // 
             // comboBox_Project
             // 
@@ -204,6 +206,7 @@
             comboBox_Project.Name = "comboBox_Project";
             comboBox_Project.Size = new Size(145, 23);
             comboBox_Project.TabIndex = 6;
+            comboBox_Project.Validating += ValidateComboBox;
             // 
             // NewEmployeeValidate
             // 

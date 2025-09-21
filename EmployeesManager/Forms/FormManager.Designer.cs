@@ -46,7 +46,7 @@
             // 
             listBoxDepartment.FormattingEnabled = true;
             listBoxDepartment.ItemHeight = 15;
-            listBoxDepartment.Location = new Point(147, 43);
+            listBoxDepartment.Location = new Point(282, 43);
             listBoxDepartment.Name = "listBoxDepartment";
             listBoxDepartment.Size = new Size(129, 214);
             listBoxDepartment.TabIndex = 2;
@@ -55,7 +55,7 @@
             // 
             listBoxPosition.FormattingEnabled = true;
             listBoxPosition.ItemHeight = 15;
-            listBoxPosition.Location = new Point(282, 43);
+            listBoxPosition.Location = new Point(147, 43);
             listBoxPosition.Name = "listBoxPosition";
             listBoxPosition.Size = new Size(129, 214);
             listBoxPosition.TabIndex = 4;
@@ -71,7 +71,7 @@
             // 
             // buttonDeleteDepartment
             // 
-            buttonDeleteDepartment.Location = new Point(147, 264);
+            buttonDeleteDepartment.Location = new Point(282, 264);
             buttonDeleteDepartment.Name = "buttonDeleteDepartment";
             buttonDeleteDepartment.Size = new Size(75, 23);
             buttonDeleteDepartment.TabIndex = 3;
@@ -83,7 +83,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(147, 19);
+            label1.Location = new Point(282, 19);
             label1.Name = "label1";
             label1.Size = new Size(73, 21);
             label1.TabIndex = 2;
@@ -93,7 +93,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(282, 19);
+            label2.Location = new Point(147, 19);
             label2.Name = "label2";
             label2.Size = new Size(53, 21);
             label2.TabIndex = 2;
@@ -111,7 +111,7 @@
             // 
             // buttonDeletePosition
             // 
-            buttonDeletePosition.Location = new Point(282, 263);
+            buttonDeletePosition.Location = new Point(147, 263);
             buttonDeletePosition.Name = "buttonDeletePosition";
             buttonDeletePosition.Size = new Size(75, 23);
             buttonDeletePosition.TabIndex = 5;
