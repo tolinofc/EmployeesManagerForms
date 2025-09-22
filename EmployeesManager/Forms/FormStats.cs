@@ -44,7 +44,9 @@ namespace EmployeesManager.Forms
 
             foreach (var group in employeesByDepartment)
             {
-                statsBuilder.AppendLine($"- {group.Key}: {group.Count()} zaměstnanců");
+                string employeeWord = GetEmployeeWordForm(group.Count());
+
+                statsBuilder.AppendLine($"- {group.Key}: {group.Count()} {employeeWord}");
             }
 
             statsBuilder.AppendLine("------------------------------------");
@@ -56,7 +58,9 @@ namespace EmployeesManager.Forms
 
             foreach (var group in employeesByPosition)
             {
-                statsBuilder.AppendLine($"- {group.Key}: {group.Count()} zaměstnanců");
+                string employeeWord = GetEmployeeWordForm(group.Count());
+
+                statsBuilder.AppendLine($"- {group.Key}: {group.Count()} {employeeWord}");
             }
 
             statsBuilder.AppendLine("------------------------------------");
@@ -68,10 +72,19 @@ namespace EmployeesManager.Forms
 
             foreach (var group in employeesByProject)
             {
-                statsBuilder.AppendLine($"- {group.Key}: {group.Count()} zaměstnanců");
+                string employeeWord = GetEmployeeWordForm(group.Count());
+
+                statsBuilder.AppendLine($"- {group.Key}: {group.Count()} {employeeWord}");
             }
 
             this.textBoxStats.Text = statsBuilder.ToString();
+        }
+
+        private static string GetEmployeeWordForm(int count)
+        {
+            if (count == 1) return "zaměstnanec";
+            if (count >= 2 && count <= 4) return "zaměstnanci";
+            return "zaměstnanců";
         }
     }
 }

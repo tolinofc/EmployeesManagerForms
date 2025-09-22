@@ -49,7 +49,7 @@
             listBoxDepartment.Location = new Point(282, 43);
             listBoxDepartment.Name = "listBoxDepartment";
             listBoxDepartment.Size = new Size(129, 214);
-            listBoxDepartment.TabIndex = 2;
+            listBoxDepartment.TabIndex = 4;
             // 
             // listBoxPosition
             // 
@@ -58,7 +58,7 @@
             listBoxPosition.Location = new Point(147, 43);
             listBoxPosition.Name = "listBoxPosition";
             listBoxPosition.Size = new Size(129, 214);
-            listBoxPosition.TabIndex = 4;
+            listBoxPosition.TabIndex = 2;
             // 
             // listBoxProject
             // 
@@ -74,7 +74,7 @@
             buttonDeleteDepartment.Location = new Point(282, 264);
             buttonDeleteDepartment.Name = "buttonDeleteDepartment";
             buttonDeleteDepartment.Size = new Size(75, 23);
-            buttonDeleteDepartment.TabIndex = 3;
+            buttonDeleteDepartment.TabIndex = 5;
             buttonDeleteDepartment.Text = "Odstranit";
             buttonDeleteDepartment.UseVisualStyleBackColor = true;
             buttonDeleteDepartment.Click += buttonDeleteDepartment_Click;
@@ -114,7 +114,7 @@
             buttonDeletePosition.Location = new Point(147, 263);
             buttonDeletePosition.Name = "buttonDeletePosition";
             buttonDeletePosition.Size = new Size(75, 23);
-            buttonDeletePosition.TabIndex = 5;
+            buttonDeletePosition.TabIndex = 3;
             buttonDeletePosition.Text = "Odstranit";
             buttonDeletePosition.UseVisualStyleBackColor = true;
             buttonDeletePosition.Click += buttonDeletePosition_Click;
@@ -178,6 +178,7 @@
             MaximumSize = new Size(570, 340);
             MinimumSize = new Size(570, 340);
             Name = "FormManager";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Odstranit";
             ResumeLayout(false);
             PerformLayout();

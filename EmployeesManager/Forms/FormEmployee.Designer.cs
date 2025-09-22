@@ -235,7 +235,10 @@
             Controls.Add(label1);
             Controls.Add(textBox_EmployeeSurname);
             Controls.Add(textBox_EmployeeName);
+            MaximumSize = new Size(293, 274);
+            MinimumSize = new Size(293, 274);
             Name = "FormEmployee";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "NewEmployeeForm";
             ((System.ComponentModel.ISupportInitialize)NewEmployeeValidate).EndInit();
             ResumeLayout(false);

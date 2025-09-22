@@ -75,8 +75,11 @@
             Controls.Add(buttonExport);
             Controls.Add(buttonImport);
             Controls.Add(label3);
+            MaximumSize = new Size(198, 174);
+            MinimumSize = new Size(198, 174);
             Name = "FormImportExport";
-            Text = "FormImportExport";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Import/Export";
             ResumeLayout(false);
             PerformLayout();
         }
